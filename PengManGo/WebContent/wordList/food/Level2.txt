@@ -1,0 +1,30 @@
+anchovy
+apricot
+avocado
+baguette
+bibimbap
+broccoli
+bulgogi
+cabbage
+chocolate
+coffee
+courgette
+cucumber
+dalgona
+fried rice
+grapefruit
+hamburger
+ketchup
+lettuce
+margarine
+mayonnaise
+miso stew
+pad thai
+parsley
+porridge
+raisins
+raspberry
+sausages
+spaghetti
+spinach
+walnuts
