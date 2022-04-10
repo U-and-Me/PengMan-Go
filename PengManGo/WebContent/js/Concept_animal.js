@@ -201,6 +201,7 @@ function checkLev(){
 }
 
 function playGame(){
+	console.log(test);
     
     bringImages();
     // 첫번째 단어 잘라서 배열에 넣기

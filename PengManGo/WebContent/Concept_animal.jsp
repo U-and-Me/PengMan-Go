@@ -1,8 +1,22 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
-
+	<%@ include file="dbconn.jsp" %>
+	<%
+		ArrayList<String> word_list = new ArrayList();
+	
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select c_word from word where diff='1'";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+			word_list.add(rs.getString("c_word"));
+		}
+	%>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,6 +70,7 @@
                 <button id="Alpha-Z" onclick="checkAlpha(this.id)" value="Z">Z</button>
                 <button id="heart" onclick="audio.play();" value="♡">🎶</button>
                 <script>
+                	let test = "dddddd";
                     let audio = new Audio('music/moring.mp3');
                     audio.addEventListener('ended', function () {
                         this.currentTime = 0;
