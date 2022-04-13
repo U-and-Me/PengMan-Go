@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>PengMan🐧</title>
+        <link rel="stylesheet" href="../css/Concept.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <a href="../index.jsp"><img id="char_link" src="../img/character.png"></button></a>
+            <img id ="background" src="../img/background.jpg">
+        </div>
+       <div id="title">
+            <img id="text" src="../img/choose_text.png">
+       </div>
+       <img src="../img/character.png" id="char">
+
+       <span id="select_con">
+            <div id="line_1">
+                <a href="../Concept_idol.jsp"><img src="../img/idol_choose.jpg" id="image"></a>
+                <a href="../Concept_job.jsp"><img src="../img/job_choose.png.jpg" id="image"></a>
+                <a href="../Concept_hobby.jsp"><img src="../img/hobby_choose.jpg" id="image"></a>
+                <a href="../Concept_beauty.jsp"><img src="../img/beauty_choose.png.jpg"  id="image"></a>
+            </div>
+            
+            <div id="line_2">
+                <a href="../Concept_food.jsp"><img src="../img/food_choose.jpg" id="image"></a>
+                <a href="../Concept_animal.jsp"><img src="../img/animal_choose.jpg" id="image"></a>
+                <a href="../Concept_color.jsp"><img src="../img/color_choose.jpg" id="image"></a>
+                <a href="../Concept_major.jsp"><img src="../img/coding_choose.jpg" id="image"></a>
+            </div>
+       </span>
+    </body>
+</html>
