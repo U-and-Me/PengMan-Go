@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/*가로 스크롤바 없앰*/
+body{
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+/*북극 배경*/
+#background{
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.6;
+    
+}
+/*상단 왼쪽 캐릭터*/
+#char{
+    position: absolute;
+    width: 11%;
+    height: 20%;
+    left: 1%;
+    top: -3%;
+}
+/*상단 글씨*/
+#span{
+    position: absolute;
+    font-weight: 1000;
+    font-size: x-large;
+    color: #004268;
+    left: 10%;
+    top: 5%;
+}
+/*그림판*/
+#draw_image{
+    position: absolute;
+    border-radius: 20px;
+    width: 41%;
+    margin-left: 52%;
+    margin-top: -45%;
+}
+#word_line{
+    position: absolute;
+    width: 40%;
+    margin-bottom: 8%;
+    top: 43%;
+    left: 14%;
+}
+.warp{
+    position: absolute;
+    margin-top: -255px;
+    margin-left: -2%;
+}
+.keyboard{
+    padding-left: 130px;
+    padding-bottom: 22px;
+    
+}
+/*키보드 버튼*/
+.keyboard button{
+    background-color: white;
+    color: #004268;
+    font-weight: bold;
+    font-size: 19px;
+    width: 55px;
+    height: 55px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    margin-left: 45px;
+   
+}
+ #word_Info{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 20%;
+    height: 30%;
+    top: 64%;
+    right: 6%;
+
+    font-size: 25px;
+    font-weight: bold;
+    color: #0d0624;
+    text-align: center;
+    padding-top: 1%;
+} 
