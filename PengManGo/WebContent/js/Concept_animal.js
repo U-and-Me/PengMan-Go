@@ -1,105 +1,5 @@
 "use strict"
 
-let Animal_Lev1 = {
-    오소리 : 'badge',
-    낙타 : 'camel',
-    치타 : 'cheetah',
-    닭 : 'chicken',
-    돌고래 : 'dolphin',
-    당나귀 : 'donkey',
-    독수리 : 'eagle',
-    코끼리 : 'elephant',
-    개구리 : 'frog',
-    기린 : 'giraffe',
-    고릴라 : 'gorilla',
-    말 : 'horse',
-    코알라 : 'koala',
-    바닷가재: 'lobster',
-    미어캣 : 'meerkat',
-    원숭이 : 'monkey',
-    문어 : 'octopus',
-    판다 : 'panda',
-    앵무새 : 'parrot',
-    펭귄 : 'penguin',
-    너구리 : 'racoon',
-    새우 : 'shrimp',
-    스컹크 : 'skunk',
-    나무늘보 : 'sloth',
-    달팽이 : 'snail',
-    거미 : 'spider',
-    불가사리 : 'starfish',
-    호랑이 : 'tiger',
-    거북이 : 'turle',
-    얼룩말 : 'zebra'
-};
-
-let Animal_Lev2 = {
-    들소 : 'buffalo',
-    잉어 : 'carp',
-    카멜레온 : 'chameleon',
-    침팬지 : 'chimpanzee',
-    매미 : 'cicada',
-    소라 : 'conch',
-    가재 : 'crayfish',
-    악어 : 'crocodile',
-    공룡 : 'dinosaur',
-    거위 : 'goose',
-    고슴도치 : 'hedgehog',
-    하이에나 : 'hyena',
-    캥거루 : 'kangaroo',
-    무당벌레 : 'ladybug',
-    표범 : 'leopard',
-    도마뱀 : 'lizard',
-    두더지 : 'mole',
-    타조 : 'ostrich',
-    비둘기 : 'pigeon',
-    오리너구리 : 'platypus',
-    다람쥐 : 'quirrel',
-    순록 : 'reindeer',
-    연어 : 'salmon',
-    갈매기 : 'seagull',
-    상어 : 'shark',
-    종달새 : 'skylark',
-    오징어 : 'squid',
-    제비 : 'swallow',
-    두꺼비 : 'toad',
-    족제비 : 'weasel'
-};
-
-let Animal_Lev3 = {
-    개미핥기 : 'anteater',
-    영양 : 'antelope',
-    북극여우 : 'arcticfox',
-    줄무늬다람쥐 : 'chipmunk',
-    산호 : 'coral',
-    뻐꾸기 : 'cuckoo',
-    사막여우 : 'desertfox',
-    물개 : 'furseal',
-    가젤 : 'gazelle',
-    갈치 : 'hairtail',
-    하마 : 'hippopotamus',
-    재규어 : 'jaguar',
-    랫서판다 : 'lesserpanda',
-    고등어 : 'mackerel',
-    까치 : 'magpie',
-    몽구스 : 'mongoose',
-    꾀꼬리 : 'nightingale',
-    오랑우탄 : 'orangutan',
-    공작새 : 'peacock',
-    북극곰 : 'polarbear',
-    쿼카 : 'quokka',
-    코뿔소 : 'rhinoceros',
-    노루 : 'roedeer',
-    바다코끼리 : 'seaelephant',
-    참새 : 'sparrow',
-    가오리 : 'stingray',
-    올챙이 : 'tadpole',
-    고라니 : 'wapiti',
-    기러기 : 'wildgoose',
-    삵 : 'wildcat'
-};
-
-let cur_level = 1; // 현재 레벨
 let list = ["", "", "", "", ""]; // 단어 배열
 let list_right = []; // 맞은 단어 배열
 let wordCount = 0; // 단어 세기
@@ -114,8 +14,6 @@ let ind = 0; // Img_list 인덱스
 let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
-
-checkLev();
 
 // 단계 넘어가기 전 초기화
 function RemoveInfo(){
@@ -184,30 +82,13 @@ function RemoveNextW(){
     playGame();
 }
 
-// 레벨에 맞는 단어 5개 가져오기
-function checkLev(){
-
-    // 게임 종료
-    if(cur_level > 3){
-        gameOver();
-    }
-
-    switch(cur_level){
-        case 1 : bringWords(Animal_Lev1); break;
-        case 2 : bringWords(Animal_Lev2); break;
-        case 3 : bringWords(Animal_Lev3); break;
-    }
-    playGame();
-}
-
 function playGame(){
-	console.log(test);
     
     bringImages();
     // 첫번째 단어 잘라서 배열에 넣기
-    Arr_word = list[wordCount].toLowerCase().split('');
+    Arr_word = ary[wordCount].toLowerCase().split('');
 
-    let word_len = list[wordCount].length; // 현재 단어 길이
+    let word_len = ary[wordCount].length; // 현재 단어 길이
 
     var line = document.querySelector("#word_line");
 
@@ -216,33 +97,6 @@ function playGame(){
         line.innerHTML += '<img id="underline" src="img/underline.png" style=" margin-left:1%; "/>';
     }
 
-}
-
-function bringWords(wordLists){
-    
-    let mapL = new Map(Object.entries(wordLists)); //  맵 변환
-    let CName = new Array();
-    let wordLength = 0;
-
-    for(let key of mapL.keys()){
-        CName.push(key); // 키 값 배열에 넣기
-        wordLength++;
-    }
-
-    for(let i = 0; i < 5; i++){
-        let index = Math.floor(Math.random() * wordLength);
-        let name = CName[index];
-
-        list[i] = mapL.get(name);
-
-        for(let j = 0; j < i; j++){ // 중복 제거
-            if(list[j] == list[i]){
-                i--;
-                break;
-            } 
-        }
-        
-    }
 }
 
 function bringImages(){
@@ -266,7 +120,7 @@ function checkAlpha(clicked_id){
     let alpha = document.getElementById(clicked_id).value;
     alpha = alpha.toLowerCase(); // 소문자로 변경
 
-    let word_len = list[wordCount].length; // 현재 단어 길이
+    let word_len = ary[wordCount].length; // 현재 단어 길이
         
     var line = document.querySelector("#word_line"); 
 
@@ -300,8 +154,6 @@ function checkAlpha(clicked_id){
             alert("다음 단계로 올라갑니다👩🏻‍🎨");
             RemoveInfo();
         }else{// 다음 단어
-            var word_info = document.querySelector("#word_Info"); 
-            word_info.innerHTML += '<div style = "font-size:20px; margin-top:2%">'+list[wordCount]+'</div>';
             RemoveNextW();
         }
     }else{

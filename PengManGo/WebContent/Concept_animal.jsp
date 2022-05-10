@@ -6,16 +6,22 @@
 <html>
 	<%@ include file="dbconn.jsp" %>
 	<%
+	// 1~10 : 1개 / 11 ~ 20 : 2개 / 21 ~ 30 : 3개
 		ArrayList<String> word_list = new ArrayList();
+		int stage = 1;
 	
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select c_word from word where diff='1'";
+		
+		String sql = "select c_word from word where diff='1' order by rand() limit 10";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 			word_list.add(rs.getString("c_word"));
 		}
+		
+		rs.close();
+		pstmt.close();
 	%>
 <head>
     <meta charset="utf-8">
@@ -70,7 +76,11 @@
                 <button id="Alpha-Z" onclick="checkAlpha(this.id)" value="Z">Z</button>
                 <button id="heart" onclick="audio.play();" value="♡">🎶</button>
                 <script>
-                	let test = "dddddd";
+                	let ary = [<%=word_list%>];
+                	for(let i = 0; i < ary.length; i++){
+                		console.log(ary[i]);
+                	}
+                	let cur_stage = <%=stage %>;
                     let audio = new Audio('music/moring.mp3');
                     audio.addEventListener('ended', function () {
                         this.currentTime = 0;
@@ -79,9 +89,6 @@
                 </script>
             </div>
         </div>
-        <span id="word_Info">
-            맞춘 단어
-        </span>
     </div>
 </body>
 
