@@ -15,9 +15,11 @@ let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
 
+checkLev();
+
 // 단계 넘어가기 전 초기화
 function RemoveInfo(){
-    cur_level++;
+    cur_stage++;
     list = ["", "", "", "", ""];
     list_right.fill("");
     Arr_word.fill("");
@@ -82,6 +84,22 @@ function RemoveNextW(){
     playGame();
 }
 
+// 레벨에 맞는 단어 5개 가져오기
+function checkLev(){
+
+    // 게임 종료
+    if(cur_stage > 3){
+        gameOver();
+    }
+
+    switch(cur_stage){
+        case 1 : bringWords(Animal_Lev1); break;
+        case 2 : bringWords(Animal_Lev2); break;
+        case 3 : bringWords(Animal_Lev3); break;
+    }
+    playGame();
+}
+
 function playGame(){
     
     bringImages();
@@ -94,13 +112,40 @@ function playGame(){
 
     // 단어 순서대로 화면에 밑줄 긋기
     for(let i = 0; i < word_len; i++){
-        line.innerHTML += '<img id="underline" src="img/underline.png" style=" margin-left:1%; "/>';
+        line.innerHTML += '<img id="underline" src="./img/underline.png" style=" margin-left:1%; "/>';
     }
 
 }
 
+function bringWords(wordLists){
+    
+    let mapL = new Map(Object.entries(wordLists)); //  맵 변환
+    let CName = new Array();
+    let wordLength = 0;
+
+    for(let key of mapL.keys()){
+        CName.push(key); // 키 값 배열에 넣기
+        wordLength++;
+    }
+
+    for(let i = 0; i < 5; i++){
+        let index = Math.floor(Math.random() * wordLength);
+        let name = CName[index];
+
+        list[i] = mapL.get(name);
+
+        for(let j = 0; j < i; j++){ // 중복 제거
+            if(list[j] == list[i]){
+                i--;
+                break;
+            } 
+        }
+        
+    }
+}
+
 function bringImages(){
-    for(let i = 0; i < Lev_Img[cur_level-1]; i++){
+    for(let i = 0; i < Lev_Img[cur_stage-1]; i++){
         let arr_len = Img_list.length;
         let index = Math.floor(Math.random() * arr_len);
 
@@ -142,13 +187,13 @@ function checkAlpha(clicked_id){
             if(list_right[i]){
                 line.innerHTML += '<span style=" margin-left:1%; width:68px; font-size:30px;">'+list_right[i]+'</span>';
             }else{
-                line.innerHTML += '<img id="underline" src="img/underline.png" style=" margin-left:1%; "/>';
+                line.innerHTML += '<img id="underline" src="./img/underline.png" style=" margin-left:1%; "/>';
             }
         }
     }     
 
     // 그림이 완성되기 전에 맞추면 다음 단어
-    if(Ans_Right == word_len && imgAdd <= Lev_Img[cur_level-1]){
+    if(Ans_Right == word_len && imgAdd <= Lev_Img[cur_stage-1]){
         // 단어 5개를 모두 맞추면 다음 단계
         if(wordCount == 4){
             alert("다음 단계로 올라갑니다👩🏻‍🎨");
@@ -159,7 +204,7 @@ function checkAlpha(clicked_id){
     }else{
         if(Ans_chk == 1){
              // 그림 체크
-            if(Lev_Img[cur_level-1] <= imgAdd){
+            if(Lev_Img[cur_stage-1] <= imgAdd){
                 // 게임 종료
                 gameOver();
             }else{
@@ -176,7 +221,7 @@ function checkAlpha(clicked_id){
 // 이미지 추가
 function AddImg(){
     var img = document.createElement('img');
-    img.src = 'img/animal_'+Img_list[Img_Arr[ind]]+'.png';
+    img.src = './img/animal_'+Img_list[Img_Arr[ind]]+'.png';
     img.id = 'animal_img';
     img.style.position = 'absolute';
     img.style.width = '400px';
@@ -197,7 +242,7 @@ function gameOver(){
     alert("🐧메인화면으로 넘어갑니다");
 
     // index.html로 돌아가기
-    var link = 'index.jsp';
+    var link = '../index.html';
     location.href = link;
     location.replace(link);
     window.open(link);
