@@ -1,0 +1,30 @@
+accountant
+anchor
+architect
+bank clerk
+biologist
+bodyguard
+carpenter
+chemist
+comedian
+composer
+counsellor
+decorator
+diplomat
+economist
+electrician
+engineer
+farmer
+journalist
+judge
+lecturer
+librarian
+mechanic
+musician
+office worker
+optician
+postmane
+sailor
+sculptor
+secretary
+solicitor

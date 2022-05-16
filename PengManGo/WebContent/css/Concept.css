@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+/*북극 배경*/
+#wrapper #background{
+    width: 100vw;
+    height: 100vh;
+}
+#wrapper{
+    position: absolute;
+}
+#char_link{
+    position: absolute;
+    width: 11%;
+    height: 20%;
+    top: -3%;
+}
+#text{
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    top: -35%;
+}
+#char{
+    position: absolute;
+    width: 15%;
+    left: 67%;
+    top: 1%;
+}
+#select_con{
+    position: absolute;
+    border-radius: 20px;
+    width: 70%;
+    height: 50%;
+    left: 20%;
+    top: 35%;
+}
+
+#image {
+    width: 20%;
+    height:30%;
+    border-radius: 20px;
+    margin-bottom: 5%;  
+    margin-right: 3%;
+}
