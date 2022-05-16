@@ -9,9 +9,5 @@
 <script src="js/Level.js" defer></script>
 </head>
 <body>
-	<div id="wrapper">
-		<img id="background" src="img/Stage_BackImg.jpg"> 
-		<a href="html/Concept.html"><img id="back_btn" src="img/Stage_icon.png"></a>
-	</div>
 </body>
 </html>
