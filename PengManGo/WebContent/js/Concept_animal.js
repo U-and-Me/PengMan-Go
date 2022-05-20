@@ -1,6 +1,5 @@
 "use strict"
 
-let list = ["", "", "", "", ""]; // 단어 배열
 let list_right = []; // 맞은 단어 배열
 let wordCount = 0; // 단어 세기
 let Arr_word = []; // 제시 단어 넣기
@@ -15,12 +14,11 @@ let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
 
-checkLev();
-
+playGame();
+/*
 // 단계 넘어가기 전 초기화
 function RemoveInfo(){
     cur_stage++;
-    list = ["", "", "", "", ""];
     list_right.fill("");
     Arr_word.fill("");
     wordCount = 0;
@@ -55,8 +53,7 @@ function RemoveInfo(){
     var word_info = document.querySelector("#word_Info");
     word_info.innerHTML += '<div style = "font-size:25px; font-weight: bold; color: #0d0624; text-align: center; padding-top: 1%;">맞춘 단어</div>';
 
-    checkLev();
-}
+}*/
 
 // 다음 단어 넘어가기 전 초기화
 function RemoveNextW(){
@@ -84,22 +81,6 @@ function RemoveNextW(){
     playGame();
 }
 
-// 레벨에 맞는 단어 5개 가져오기
-function checkLev(){
-
-    // 게임 종료
-    if(cur_stage > 3){
-        gameOver();
-    }
-
-    switch(cur_stage){
-        case 1 : bringWords(Animal_Lev1); break;
-        case 2 : bringWords(Animal_Lev2); break;
-        case 3 : bringWords(Animal_Lev3); break;
-    }
-    playGame();
-}
-
 function playGame(){
     
     bringImages();
@@ -117,33 +98,6 @@ function playGame(){
 
 }
 
-function bringWords(wordLists){
-    
-    let mapL = new Map(Object.entries(wordLists)); //  맵 변환
-    let CName = new Array();
-    let wordLength = 0;
-
-    for(let key of mapL.keys()){
-        CName.push(key); // 키 값 배열에 넣기
-        wordLength++;
-    }
-
-    for(let i = 0; i < 5; i++){
-        let index = Math.floor(Math.random() * wordLength);
-        let name = CName[index];
-
-        list[i] = mapL.get(name);
-
-        for(let j = 0; j < i; j++){ // 중복 제거
-            if(list[j] == list[i]){
-                i--;
-                break;
-            } 
-        }
-        
-    }
-}
-
 function bringImages(){
     for(let i = 0; i < Lev_Img[cur_stage-1]; i++){
         let arr_len = Img_list.length;
@@ -157,6 +111,7 @@ function bringImages(){
                 break;
             } 
         }
+        console.log(Img_Arr[i]);
     }
 }
 
@@ -194,10 +149,10 @@ function checkAlpha(clicked_id){
 
     // 그림이 완성되기 전에 맞추면 다음 단어
     if(Ans_Right == word_len && imgAdd <= Lev_Img[cur_stage-1]){
-        // 단어 5개를 모두 맞추면 다음 단계
-        if(wordCount == 4){
+        // 단어 모두 맞추면 다음 스테이지
+        if(wordCount == cur_stage){
             alert("다음 단계로 올라갑니다👩🏻‍🎨");
-            RemoveInfo();
+            gameOver();
         }else{// 다음 단어
             RemoveNextW();
         }

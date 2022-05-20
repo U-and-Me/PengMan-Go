@@ -11,24 +11,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PengMan🐧</title>
     <link rel="stylesheet" href="css/Concept_game.css">
-    <script src="js/Concept_animal.js?testNm=3"" defer></script>
+    <script src="js/Concept_animal.js?testNm=6" defer></script>
 </head>
 	<%@include file="./dbconn.jsp" %>
 	<%
 	// 1~10 : 1개 / 11 ~ 20 : 2개 / 21 ~ 30 : 3개
-		ArrayList<String> word_list = new ArrayList<>();
-		int stage = 1;
+		ArrayList<String> word_list1 = new ArrayList<>();
+		ArrayList<String> word_list2 = new ArrayList<>();
+		ArrayList<String> word_list3 = new ArrayList<>();
 		int ind = 0;
 	
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select c_word from word where diff='1' and concept='animal' order by rand() limit 5";
+		String sql = "select c_word from word where diff='1' and concept='animal' order by rand() limit 1";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()){
-			word_list.add(rs.getString("c_word"));
+			word_list1.add(rs.getString("c_word"));
+			System.out.println(word_list1.get(0));
 		}
+		
+		sql = "select c_word from word where diff='2' and concept='animal' order by rand() limit 2";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+			word_list2.add(rs.getString("c_word"));
+		}
+		System.out.println(word_list2.get(0));
+		System.out.println(word_list2.get(1));
+		sql = "select c_word from word where diff='3' and concept='animal' order by rand() limit 3";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+			word_list3.add(rs.getString("c_word"));
+		}
+
+		System.out.println(word_list3.get(0));
+		System.out.println(word_list3.get(1));
+		System.out.println(word_list3.get(2));
 		
 		if(rs != null){
      		rs.close();
@@ -44,7 +65,7 @@
     <div id="back">
             <img id="background"src="img/background.jpg">
             <a href="index.jsp"><img id="char" src="img/character.png"></button></a>
-            <span id="span">동물-1단계</span>
+            <span id="span">동물</span>
         <div id="back_2">
             <img id="draw_image" src="img\yard.jpg">
             <div id="back_img"></div>
@@ -85,18 +106,27 @@
             <button id="heart" onclick="audio.play();" value="♡">🎶</button>
             <script>                	
             	let ary = [];
+            	
+    			let cur_stage = window.localStorage.getItem("stage");
+    			//console.log(cur_stage);
+    			let word = 0;
+    			
+            	if(cur_stage >= 1 && cur_stage <= 10){
+            		ary[0] = "<%= word_list1.get(0) %>";
+            		word = 1;
+            	}else if(cur_stage >= 11 && cur_stage <= 20){
+            		ary[0] = "<%= word_list2.get(0) %>";
+            		ary[1] = "<%= word_list2.get(1) %>";
+            		word = 2;
+            	}else if(cur_stage >= 21 && cur_stage <= 30){
+            		ary[0] = "<%= word_list3.get(0) %>";
+            		ary[1] = "<%= word_list3.get(1) %>";
+            		ary[2] = "<%= word_list3.get(2) %>";
+            		word = 3;
+            	}
+            	
+            	console.log(ary[0]);
     	
-    			ary[0] = "<%= word_list.get(0) %>";
-    			ary[1] = "<%= word_list.get(1) %>";
-    			ary[2] = "<%= word_list.get(2) %>";
-    			ary[3] = "<%= word_list.get(3) %>";
-    			ary[4] = "<%= word_list.get(4) %>";
-    	
-    			for(let i = 0; i < 5; i++){
-    				console.log(ary[i] + "  " + i);
-    			}
-    	
-    			let cur_stage = <%=stage %>;
                 let audio = new Audio('music/moring.mp3');
                 audio.addEventListener('ended', function () {
                     this.currentTime = 0;
