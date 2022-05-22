@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+/*북극 배경*/
+#wrapper #background{
+    width: 100vw;
+    height: 100vh;
+}
+#wrapper{
+    position: absolute;
+}
+#logo{
+    position: absolute;
+    margin-left: 18%;
+    margin-top: -19%;
+    height: 130%;
+}
+#img-start{
+    position: absolute;
+    left: 25%;
+    bottom: 8%;
+    height: 27%;
+    width: 13%;
+}
+#img-help{
+    position: absolute;
+    left: 62%;
+    bottom: 8%;
+    height: 27%;
+    width: 13%;
+}
+#img-start:hover{
+    transform: scale(1.1);
+}
+#img-help:hover{
+    transform: scale(1.1);
+}

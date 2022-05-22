@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+/*북극 배경*/
+#wrapper #background{
+    width: 100vw;
+    height: 100vh;
+}
+#info{
+    top: -7%;
+}
+#wrapper{
+    position: absolute;
+}
+#char{
+    position: absolute;
+    width: 11%;
+    height: 20%;
+    top: -3%;
+}
+#wrapper #info{
+    position: absolute;
+    margin-left: 30%;
+    margin-top: -10%;
+    height: 80%;
+}
+#rect{
+    position: absolute;
+    border-radius: 90px;
+    background-color: #ffffff;
+    opacity: 0.7;
+    filter: brightness(120%);
+    width: 75%;
+    height: 65%;
+    top: 30%;
+    left: 12%;
+}
+#info_1{
+    font-size: 30px;
+    font-weight: bold;
+    color: #090613;
+    line-height: 180%;
+    margin-top: 4%;
+    margin-left: 5%;
+}
+#info_2{
+    font-size: 20px;
+    font-weight: bold;
+    color: #110735;
+    line-height: 180%;
+    margin-top: 4%;
+    margin-left: 5%;
+}
