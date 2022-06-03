@@ -10,10 +10,10 @@
 </head>
 <body>
 	<div id="back">
-        <img id="background" src=".\img\Stage_background.jpg">
+        <img id="background" src="./img/Stage_background.jpg">
     </div>
      <!--순서 반대로 해버렸네..... 1=30, 30=1-->
-    <span id="stage_con1" onclick=""> <!-- 30 level -->
+    <span id="stage_con1" onclick="clickId(30)"> <!-- 30 level -->
         <a href="Concept_animal.jsp"><img src=".\img\Stage_icon.png" id="image1"></a>
     </span>
     <span id="stage_con2" onclick="clickId(29)"> <!-- 29 level -->

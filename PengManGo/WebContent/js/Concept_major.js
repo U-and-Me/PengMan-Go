@@ -166,12 +166,10 @@ function AddImg(){
 }
 
 function gameOver(){
-    alert("정답은 "+ary[wordCount]+"입니다");
-    alert("🐧GameOver🐧");
-    alert("🐧메인화면으로 넘어갑니다");
+    alert("🐧GameOver🐧\n정답은 "+ary[wordCount]+"입니다");
 
     // index.html로 돌아가기
-    var link = './index.jsp';
+    var link = './Level_major.jsp';
     location.href = link;
     location.replace(link);
     window.open(link);
