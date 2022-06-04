@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PengMan🐧</title>
     <link rel="stylesheet" href="css/Concept_game.css">
-    <script src="js/Concept_animal.js?testNm=6" defer></script>
+    <script src="js/Concept_animal.js?testNm=7" defer></script>
 </head>
 	<%@include file="./dbconn.jsp" %>
 	<%
@@ -64,7 +64,7 @@
 <body>
     <div id="back">
             <img id="background"src="img/background.jpg">
-            <a href="index.jsp"><img id="char" src="img/character.png"></button></a>
+            <a href="./Level_animal.jsp"><img id="char" src="img/character.png"></button></a>
             <span id="span">동물</span>
         <div id="back_2">
             <img id="draw_image" src="img\yard.jpg">
@@ -107,7 +107,7 @@
             <script>                	
             	let ary = [];
             	
-    			let cur_stage = window.localStorage.getItem("stage");
+    			let cur_stage = parseInt(window.localStorage.getItem("stage"));
     			//console.log(cur_stage);
     			let word = 0;
     			
@@ -124,8 +124,6 @@
             		ary[2] = "<%= word_list3.get(2) %>";
             		word = 3;
             	}
-            	
-            	console.log(ary[0]);
     	
                 let audio = new Audio('music/moring.mp3');
                 audio.addEventListener('ended', function () {

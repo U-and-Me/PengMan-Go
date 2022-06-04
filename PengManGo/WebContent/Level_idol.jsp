@@ -6,16 +6,27 @@
 <meta charset="UTF-8">
 <title>PengMan🐧</title>
 <link rel="stylesheet" href="css/Level.css">
-<script src="js/Level.js?testNm=4" defer></script>
+<script src="js/Level.js?testNm=7" defer></script>
 </head>
 <%@include file="./dbconn.jsp" %>
 	<%
+		String str = request.getParameter("stage");
+		//System.out.println(str + "ddddd");
+		
 		int stage = 0;
 	
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		String sql = "";
 		
-		String sql = "select position from stage where concept='idol'";
+		if(str != null &&Integer.parseInt(str) > 1){
+			sql = "update stage set position=? where concept='idol'";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, str);
+			pstmt.executeUpdate();
+		}
+		
+		sql = "select position from stage where concept='idol'";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()){

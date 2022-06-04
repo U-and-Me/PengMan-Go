@@ -121,8 +121,10 @@ function checkAlpha(clicked_id){
         if((wordCount + 1) == word){
             alert("다음 단계로 올라갑니다👩🏻‍🎨");
             
+            cur_stage = cur_stage + 1;
+            
 			// 스테이지 페이지로 이동
-			var link = './Level_animal.jsp';
+			var link = './Level_animal.jsp?stage=' + encodeURI(cur_stage);
     		location.href = link;
     		location.replace(link);
     		window.open(link);
