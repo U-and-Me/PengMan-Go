@@ -121,8 +121,10 @@ function checkAlpha(clicked_id){
         if((wordCount + 1) == word){
             alert("다음 단계로 올라갑니다👩🏻‍🎨");
             
+			cur_stage = cur_stage + 1;
+            
 			// 스테이지 페이지로 이동
-			var link = './Level_animal.jsp';
+			var link = './Level_major.jsp?stage=' + encodeURI(cur_stage);
     		location.href = link;
     		location.replace(link);
     		window.open(link);
@@ -166,12 +168,10 @@ function AddImg(){
 }
 
 function gameOver(){
-    alert("정답은 "+ary[wordCount]+"입니다");
-    alert("🐧GameOver🐧");
-    alert("🐧메인화면으로 넘어갑니다");
+    alert("🐧GameOver🐧\n정답은 "+ary[wordCount]+"입니다");
 
     // index.html로 돌아가기
-    var link = './index.jsp';
+    var link = './Level_major.jsp';
     location.href = link;
     location.replace(link);
     window.open(link);
