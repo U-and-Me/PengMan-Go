@@ -20,13 +20,13 @@
 		String sql = "";
 		
 		if(str != null &&Integer.parseInt(str) > 1){
-			sql = "update stage set position=? where concept='animal'";
+			sql = "update stage set position=? where concept='brand'";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, str);
 			pstmt.executeUpdate();
 		}
 		
-		sql = "select position from stage where concept='animal'";
+		sql = "select position from stage where concept='brand'";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()){
@@ -136,7 +136,7 @@
     </span>
     <span id="stage_con2" onclick="clickId(2, 'animal')">
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image2"></a>
-    </span>    
+    </span>  
 
     <script >
     	let db_stage = <%= stage%>;
