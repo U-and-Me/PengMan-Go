@@ -49,9 +49,23 @@
 	<div id="back">
         <img id="background" src="img/Stage_background.png">
     </div>
+     <!--순서 반대로 해버렸네..... 1=30, 30=1-->
+    <span id="stage_con1" onclick="clickId(30, 'animal')"> <!-- 30 level -->
+        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image1"></a>
+    </span>
+   <span id="stage_con2" onclick="clickId(29, 'animal')"> <!-- 29 level -->
+        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image2"></a>
+    </span>
+    <span id="stage_con3" onclick="clickId(28, 'animal')">
+        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image3"></a>
+    </span>
+    <span id="stage_con4" onclick="clickId(27, 'animal')">
+        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image4"></a>
+
 
         <span id="stage_con30" onclick="clickId(30, 'animal')"> <!-- 30 level -->
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image30"></a>
+
     </span>
     <span id="stage_con29" onclick="clickId(29, 'animal')"> <!-- 29 level -->
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image29"></a>
@@ -86,8 +100,12 @@
     <span id="stage_con19" onclick="clickId(19, 'animal')">
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image19"></a>
     </span>
+    <span id="stage_con16" onclick="clickId(15, 'animal')">
+        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image16"></a>
+
     <span id="stage_con18" onclick="clickId(18, 'animal')">
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image18"></a>
+
     </span>
     <span id="stage_con17" onclick="clickId(17, 'animal')">
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image17"></a>
