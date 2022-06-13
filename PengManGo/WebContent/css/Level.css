@@ -6,6 +6,7 @@ body {
     overflow-x: hidden;
 }
 /*배경 이미지*/
+
 #back #background{
     width: 100vw;
     height: 350vh;
@@ -367,7 +368,7 @@ body {
     position: absolute;
     width: 9%;
     left: 36%;
-    top: 214%;
+    top: 212%;
 }
 #image30 {
     width: 300%;

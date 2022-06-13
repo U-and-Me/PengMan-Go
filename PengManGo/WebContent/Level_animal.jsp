@@ -53,7 +53,7 @@
     <span id="stage_con1" onclick="clickId(30, 'animal')"> <!-- 30 level -->
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image1"></a>
     </span>
-    <span id="stage_con2" onclick="clickId(29, 'animal')"> <!-- 29 level -->
+   <span id="stage_con2" onclick="clickId(29, 'animal')"> <!-- 29 level -->
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image2"></a>
     </span>
     <span id="stage_con3" onclick="clickId(28, 'animal')">
@@ -96,7 +96,7 @@
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image15"></a>
     </span>
     <span id="stage_con16" onclick="clickId(15, 'animal')">
-        <a href="javascript:;" id="link"v><img src=".\img\Stage_icon.png" id="image16"></a>
+        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image16"></a>
     </span>
     <span id="stage_con17" onclick="clickId(14, 'animal')">
         <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image17"></a>
