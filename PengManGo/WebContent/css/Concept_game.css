@@ -70,15 +70,8 @@ body{
 }
  #word_Info{
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.5);
     width: 20%;
     height: 30%;
     top: 64%;
     right: 6%;
-
-    font-size: 25px;
-    font-weight: bold;
-    color: #0d0624;
-    text-align: center;
-    padding-top: 1%;
 } 

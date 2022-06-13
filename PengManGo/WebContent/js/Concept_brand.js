@@ -14,6 +14,8 @@ let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
 
+let hint_time = 1000;	// 힌트 보여줄 시간
+
 checkLevel();
 
 function checkLevel(){
@@ -141,6 +143,8 @@ function checkAlpha(clicked_id){
                 // 그림 추가
                 imgAdd++;
                 AddImg();
+                // 힌트 추가 
+                AddHint();
             }
         }
     }
@@ -150,7 +154,6 @@ function checkAlpha(clicked_id){
 
 // 이미지 추가
 function AddImg(){
-	console.log(Img_Arr[ind]);
     var img = document.createElement('img');
     img.src = './img/brand_'+Img_list[Img_Arr[ind]]+'.png';
     img.id = 'animal_img';
@@ -165,6 +168,34 @@ function AddImg(){
 
     ind++;
     pos_ind++;
+}
+
+// 힌트 추가
+function AddHint(){
+
+	var hint_Info = document.querySelector("#word_Info"); 
+		        
+	var img = document.createElement('img');
+		
+	if(word == 1)
+		img.src = 'hint/brand/onestep/' + ary[wordCount] + '.jpg';
+	if(word == 2)
+		img.src = 'hint/brand/twostep/' + ary[wordCount] + '.jpg';
+	if(word == 3)
+		img.src = 'hint/brand/threestep/' + ary[wordCount] + '.jpg';
+
+	img.style.top = '30%';
+	img.style.left = '40%';
+	img.style.heigth = '80%';
+	img.style.width = '80%';
+		
+	hint_Info.appendChild(img);
+	
+	setTimeout(() => {  while(hint_Info.hasChildNodes()){
+        hint_Info.removeChild(hint_Info.firstChild);
+    }}, hint_time);
+	
+	hint_time += 1000;
 }
 
 function gameOver(){
