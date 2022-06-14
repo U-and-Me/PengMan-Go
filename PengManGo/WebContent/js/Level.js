@@ -1,9 +1,10 @@
 "use strict"
 
 function clickId(stage, concept){
+	console.log(stage);
 	
+/*
 	if(stage <= db_stage){
-	
 		var link = document.querySelector("#link");
 		
 		let cur_stage = stage;
@@ -15,6 +16,6 @@ function clickId(stage, concept){
     	window.open(link);
     	
 	}
-
+*/
 	
 }
