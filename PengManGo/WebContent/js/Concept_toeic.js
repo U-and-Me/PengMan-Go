@@ -14,6 +14,8 @@ let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
 
+let hint_time = 2000;
+
 checkLevel();
 
 function checkLevel(){
@@ -141,6 +143,7 @@ function checkAlpha(clicked_id){
                 // 그림 추가
                 imgAdd++;
                 AddImg();
+                AddHint();
             }
         }
     }
@@ -165,6 +168,43 @@ function AddImg(){
 
     ind++;
     pos_ind++;
+}
+
+// 힌트 추가
+function AddHint(){
+
+	var hint_Info = document.querySelector("#word_Info"); 
+		     
+	var button = document.createElement('button');
+	
+	// 오디오
+	let music;
+		
+	if(word == 1)
+		 music = new Audio('/hint/toeic/onestep/' + ary[wordCount] + '.mp3');
+	if(word == 2)
+		music = new Audio('../hint/toeic/twostep/' + ary[wordCount] + '.mp3');
+	if(word == 3)
+		music = new Audio('../hint/toeic/threestep/' + ary[wordCount] + '.mp3');
+		
+	console.log(music);
+
+	
+    button.style.color='#004268';
+    button.style.width='50%';
+    button.style.height='50%';
+    button.style.left='20%';
+    button.style.top='100%';
+    button.onclick = 'music.play();'
+		
+	hint_Info.appendChild(button);
+	
+	button.addEventListener('click', () => {
+		music.play();
+	});
+
+	
+	hint_time += 2500;
 }
 
 function gameOver(){
