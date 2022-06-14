@@ -141,6 +141,8 @@ function checkAlpha(clicked_id){
                 // 그림 추가
                 imgAdd++;
                 AddImg();
+                // 힌트 추가 
+                AddHint();
             }
         }
     }
@@ -165,6 +167,33 @@ function AddImg(){
 
     ind++;
     pos_ind++;
+}
+
+// 힌트 추가
+function AddHint(){
+
+	var hint_Info = document.querySelector("#word_Info"); 
+		     
+	var button = document.createElement('button');
+	
+	// 오디오
+	let audio;
+		
+	if(word == 1)
+		 audio = new Audio('hint/idol/onestep/' + ary[wordCount] + '.mp3');
+	if(word == 2)
+		audio = new Audio('hint/idol/onestep/' + ary[wordCount] + '.mp3');
+	if(word == 3)
+		audio = new Audio('hint/idol/onestep/' + ary[wordCount] + '.mp3');
+
+	button.style.top = '-50%';
+	button.style.left = '20%';
+	button.style.heigth = '80%';
+	button.style.width = '100%';
+		
+	hint_Info.appendChild(button);
+	
+	
 }
 
 function gameOver(){
