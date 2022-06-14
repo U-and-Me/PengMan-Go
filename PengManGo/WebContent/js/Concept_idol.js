@@ -14,6 +14,8 @@ let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
 
+let hint_time = 2000;
+
 checkLevel();
 
 function checkLevel(){
@@ -177,23 +179,33 @@ function AddHint(){
 	var button = document.createElement('button');
 	
 	// 오디오
-	let audio;
+	let music;
 		
 	if(word == 1)
-		 audio = new Audio('hint/idol/onestep/' + ary[wordCount] + '.mp3');
+		 music = new Audio('/hint/idol/onestep/' + ary[wordCount] + '.mp3');
 	if(word == 2)
-		audio = new Audio('hint/idol/onestep/' + ary[wordCount] + '.mp3');
+		music = new Audio('../hint/idol/twostep/' + ary[wordCount] + '.mp3');
 	if(word == 3)
-		audio = new Audio('hint/idol/onestep/' + ary[wordCount] + '.mp3');
+		music = new Audio('../hint/idol/threestep/' + ary[wordCount] + '.mp3');
+		
+	console.log(music);
 
-	button.style.top = '-50%';
-	button.style.left = '20%';
-	button.style.heigth = '80%';
-	button.style.width = '100%';
+	
+    button.style.color='#004268';
+    button.style.width='50%';
+    button.style.height='50%';
+    button.style.left='20%';
+    button.style.top='100%';
+    button.onclick = 'music.play();'
 		
 	hint_Info.appendChild(button);
 	
+	button.addEventListener('click', () => {
+		music.play();
+	});
+
 	
+	hint_time += 2500;
 }
 
 function gameOver(){

@@ -1,0 +1,30 @@
+abstract:추상 메소드를 사용하기 위해 class앞에 붙야야한다 (메소드 이름 앞에도)
+between:SELECT * FROM [테이블명] WHERE [칼럼명] ??????? [조건1] AND [조건]
+casting:형변환
+constructor:생성자 
+database:여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
+distinct:sql 중복제거 키워드 
+exception:예외처리
+identifier:식별자
+implements:자바 상속 (interface 상속에 허용)
+inheritance:자바 상속 
+instanceof:객체 타입을 확인하는 연산자
+interface:자바 일종의 추상클래스 class 대신 ?????????로
+literal:int a = 1; int 앞에 final를 붙일 시 , a는 상수가 된다. 여기서의 ???????는 1이다
+namespace:내부 식별자에 사용될 수 있는 유효 범위를 제공하는 선언적 영역 
+operator:연산자
+overloading:두 메서드가 같은 이름을 갖고 있으나 인자의 수나 자료형이 다른 경우
+overriding:상속 관계에 있는 클래스 간에 같은 이름의 메서드를 정의하는 것
+package:하나의 클래스 안에서 같은 이름의 클래스들을 사용하기 위한 방법. 폴더와 유사
+parameter:매개변수
+primary:???????key <- 기본키
+protected:접근 제한자. public default 접근 제한
+references:참조 
+register:변수를 선언할 때 이것을 붙이면 메모리 대신 CPU의 레지스터를 사용
+singleton:특정 클래스의 인스턴스를 1개만 생성되도록 제한
+symbolic:********상수는 리터럴 상수와의 반대 개념. 상수를 기호화 하여 의미있는 이름으로  지어서 쓰는 상수 
+synchronized:자바 동기화
+typedef:struct키워드 없이 구조체를 선언
+unsigned:부호가 없는 정수 자료형 앞에는 이것을 붙이면 된다.
+variable:변수 
+virtual:가상

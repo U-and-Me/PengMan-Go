@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PengMan🐧</title>
-    <link rel="stylesheet" href="css/Concept_game.css">
+    <link rel="stylesheet" href="css/Concept_game.css?testNm=4">
     <script src="js/Concept_character.js?testNm=7" defer></script>
 </head>
 	<%@include file="./dbconn.jsp" %>
@@ -132,7 +132,10 @@
                 }, false);
             </script>
         </div>
-    </div> 
+    </div>  
+    <span id="word_Info">
+    
+    </span>
 </div>
 </body>
 </html>
