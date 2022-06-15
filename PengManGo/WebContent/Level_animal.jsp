@@ -47,7 +47,8 @@
 	%>
 <body>
 	<div id="back">
-        <img id="background" src=".\img\Stage_Background.png">
+
+       <img id="background" src=".\img\Stage_Background.png">
     </div>
      <div id = "stage_con30" onclick="clickId(30, 'animal')">
        <img id="image1" src=".\img\Stage_icon.png">

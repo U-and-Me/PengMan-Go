@@ -132,7 +132,10 @@
                 }, false);
             </script>
         </div>
-    </div> 
+    </div>  
+    <span id="word_Info">
+    
+    </span>
 </div>
 </body>
 </html>

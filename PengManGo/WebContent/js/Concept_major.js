@@ -14,7 +14,7 @@ let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
 
-let hint_time = 1000;	// 힌트 보여줄 시간
+let hint_time = 1500;	// 힌트 보여줄 시간
 
 checkLevel();
 
@@ -175,19 +175,19 @@ function AddHint(){
 
 	var hint_Info = document.querySelector("#word_Info"); 
 		        
-	var span = document.createElement('span');
+	var img = document.createElement('img');
 		
 	if(word == 1)
-		span.textContent = 'hint/major/onestep';
+		img.src = 'hint/major/onestep/' + ary[wordCount] + '.jpg';
 	if(word == 2)
-		span.textContent = 'hint/major/twostep';
+		img.src = 'hint/major/twostep/' + ary[wordCount] + '.jpg';
 	if(word == 3)
-		span.textContent = 'hint/major/threestep';
+		img.src = 'hint/major/threestep/' + ary[wordCount] + '.jpg';
 
-	img.style.top = '80%';
-	img.style.left = '20%';
-	img.style.heigth = '80%';
-	img.style.width = '80%';
+	img.style.top = '30%';
+	img.style.left = '40%';
+	img.style.heigth = '50%';
+	img.style.width = '50%';
 		
 	hint_Info.appendChild(img);
 	
@@ -195,7 +195,7 @@ function AddHint(){
         hint_Info.removeChild(hint_Info.firstChild);
     }}, hint_time);
 	
-	hint_time += 1000;
+	hint_time += 1200;
 }
 
 function gameOver(){

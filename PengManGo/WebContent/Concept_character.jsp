@@ -67,7 +67,7 @@
             <a href="./Level_character.jsp"><img id="char" src="img/character.png"></button></a>
             <span id="span">캐릭터</span>
         <div id="back_2">
-            <img id="draw_image" src="img\character_background.png">
+            <img id="draw_image" src="img\character_background.jpg">
             <div id="back_img"></div>
         </div> 
         <div id="word_line"></div>
