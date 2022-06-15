@@ -47,100 +47,103 @@
 	%>
 <body>
 	<div id="back">
+<<<<<<< HEAD
         <img id="background" src="img/Stage_Background.png">
+=======
+        <img id="background" src=".\img\Stage_Background.png">
+>>>>>>> e693b1ae9d238f190fb4558d7c01f2c3d07fa233
     </div>
      <!--순서 반대로 해버렸네..... 1=30, 30=1-->
-    <span id="stage_con1" onclick="clickId(30, 'major')"> <!-- 30 level -->
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image1"></a>
-    </span>
-    <span id="stage_con2" onclick="clickId(29, 'major')"> <!-- 29 level -->
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image2"></a>
-    </span>
-    <span id="stage_con3" onclick="clickId(28, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image3"></a>
-    </span>
-    <span id="stage_con4" onclick="clickId(27, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image4"></a>
-    </span>
-    <span id="stage_con5" onclick="clickId(26, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image5"></a>
-    </span>
-    <span id="stage_con6" onclick="clickId(25, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image6"></a>
-    </span>
-    <span id="stage_con7" onclick="clickId(24, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image7"></a>
-    </span>
-    <span id="stage_con8" onclick="clickId(23, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image8"></a>
-    </span>
-    <span id="stage_con9" onclick="clickId(22, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image9"></a>
-    </span>
-    <span id="stage_con10" onclick="clickId(21, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image10"></a>
-    </span>
-    <span id="stage_con11" onclick="clickId(20, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image11"></a>
-    </span>
-    <span id="stage_con12" onclick="clickId(19, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image12"></a>
-    </span>
-    <span id="stage_con13" onclick="clickId(18, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image13"></a>
-    </span>
-    <span id="stage_con14" onclick="clickId(17, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image14"></a>
-    </span>
-    <span id="stage_con15" onclick="clickId(16, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image15"></a>
-    </span>
-    <span id="stage_con16" onclick="clickId(15, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image16"></a>
-    </span>
-    <span id="stage_con17" onclick="clickId(14, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image17"></a>
-    </span>
-    <span id="stage_con18" onclick="clickId(13, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image18"></a>
-    </span>
-    <span id="stage_con19" onclick="clickId(12, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image19"></a>
-    </span>
-    <span id="stage_con20" onclick="clickId(11, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image20"></a>
-    </span>
-    <span id="stage_con21" onclick="clickId(10, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image21"></a>
-    </span>
-    <span id="stage_con22" onclick="clickId(9, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image22"></a>
-    </span>
-    <span id="stage_con23" onclick="clickId(8, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image23"></a>
-    </span>
-    <span id="stage_con24" onclick="clickId(7, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image24"></a>
-    </span>
-    <span id="stage_con25" onclick="clickId(6, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image25"></a>
-    </span>
-    <span id="stage_con26" onclick="clickId(5, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image26"></a>
-    </span>
-    <span id="stage_con27" onclick="clickId(4, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image27"></a>
-    </span>
-    <span id="stage_con28" onclick="clickId(3, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image28"></a>
-    </span>
-    <span id="stage_con29" onclick="clickId(2, 'major')">
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image29"></a>
-    </span>
-    <span id="stage_con30" onclick="clickId(1, 'major')"> <!-- 1 level -->
-        <a href="javascript:;" id="link"><img src=".\img\Stage_icon.png" id="image30"></a>
-    </span>
-    
+     <div id = "stage_con30" onclick="clickId(30, 'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+        <div id = "stage_con29" onclick="clickId(29,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con28" onclick="clickId(28,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+        <div id = "stage_con27" onclick="clickId(27,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con26" onclick="clickId(26,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con25" onclick="clickId(25,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con24" onclick="clickId(24, 'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con23" onclick="clickId(23,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con22" onclick="clickId(22,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con21" onclick="clickId(21,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con20" onclick="clickId(20,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con19" onclick="clickId(19,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con18" onclick="clickId(18,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con17" onclick="clickId(17,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con16" onclick="clickId(16,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con15" onclick="clickId(15,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con14" onclick="clickId(14,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con13" onclick="clickId(13,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con12" onclick="clickId(12,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con11" onclick="clickId(11,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con10" onclick="clickId(10,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con9" onclick="clickId(9,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con8" onclick="clickId(8,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con7" onclick="clickId(7,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con6" onclick="clickId(6,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con5" onclick="clickId(5,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con4" onclick="clickId(4,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con3" onclick="clickId(3,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con2" onclick="clickId(2,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
+       <div id = "stage_con1" onclick="clickId(1,  'major')">
+       <img id="image1" src=".\img\Stage_icon.png">
+       </div>
      <script >
     	let db_stage = <%= stage%>;
     </script>
