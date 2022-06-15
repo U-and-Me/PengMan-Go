@@ -47,7 +47,7 @@
 	%>
 <body>
 	<div id="back">
-        <img id="background" src=".\img\Stage_background.jpg">
+        <img id="background" src=".\img\Stage_Background.png">
     </div>
      <!--순서 반대로 해버렸네..... 1=30, 30=1-->
      <div id = "stage_con30" onclick="clickId(30, 'major')">
