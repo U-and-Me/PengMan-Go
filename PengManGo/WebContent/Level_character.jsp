@@ -47,7 +47,7 @@
 	%>
 <body>
 	<div id="back">
-        <img id="background" src="img/Stage_background.png">
+        <img id="background" src="img/Stage_Background.png">
     </div>
 
         <span id="stage_con30" onclick="clickId(30, 'animal')"> <!-- 30 level -->

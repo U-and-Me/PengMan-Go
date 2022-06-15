@@ -47,7 +47,7 @@
 	%>
 <body>
 	<div id="back">
-        <img id="background" src="img/Stage_background.png">
+        <img id="background" src="img/Stage_Background.png">
     </div>
      <!--순서 반대로 해버렸네..... 1=30, 30=1-->
     <span id="stage_con1" onclick="clickId(30, 'animal')"> <!-- 30 level -->
