@@ -87,6 +87,10 @@ function bringImages(){
 
 // 입력받아서 맞으면 알파벳 추가 / 틀리면 그림 추가
 function checkAlpha(clicked_id){
+	// 버튼 효과음 재생
+	let audio = new Audio('music/click.mp3');
+	audio.play();
+
     let alpha = document.getElementById(clicked_id).value;
     alpha = alpha.toLowerCase(); // 소문자로 변경
 
@@ -125,11 +129,7 @@ function checkAlpha(clicked_id){
             
             cur_stage = cur_stage + 1;
             
-			// 스테이지 페이지로 이동
-			var link = './Level_animal.jsp?stage=' + encodeURI(cur_stage);
-    		location.href = link;
-    		location.replace(link);
-    		window.open(link);
+			gameOver();
         }else{// 다음 단어
             RemoveNextW();
         }
@@ -137,8 +137,13 @@ function checkAlpha(clicked_id){
         if(Ans_chk == 1){
              // 그림 체크
             if(Lev_Img[word - 1] <= imgAdd){
-                // 게임 종료
-                gameOver();
+				// 버튼 효과음 재생
+				let audio = new Audio('music/gameover.mp3');
+				audio.play();
+				setTimeout(() => {  
+               		// 게임 종료
+                	gameOver();
+				}, 700);
             }else{
                 // 그림 추가
                 imgAdd++;
@@ -198,7 +203,7 @@ function AddHint(){
 	hint_time += 1000;
 }
 
-function gameOver(){
+function gameOver(){	
     alert("🐧GameOver🐧\n정답은 "+ary[wordCount]+"입니다");
 
     // index.html로 돌아가기

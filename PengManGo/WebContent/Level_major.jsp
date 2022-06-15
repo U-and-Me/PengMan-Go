@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>PengMan🐧</title>
-<link rel="stylesheet" href="css/Level.css">
-<script src="js/Level.js?testNm=7" defer></script>
+<link rel="stylesheet" href="css/Level.css?testNm=5">
+<script src="js/Level.js?testNm=10" defer></script>
 </head>
 <%@include file="./dbconn.jsp" %>
 	<%
@@ -47,11 +47,7 @@
 	%>
 <body>
 	<div id="back">
-<<<<<<< HEAD
-        <img id="background" src="img/Stage_Background.png">
-=======
         <img id="background" src=".\img\Stage_Background.png">
->>>>>>> e693b1ae9d238f190fb4558d7c01f2c3d07fa233
     </div>
      <!--순서 반대로 해버렸네..... 1=30, 30=1-->
      <div id = "stage_con30" onclick="clickId(30, 'major')">

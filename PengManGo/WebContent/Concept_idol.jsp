@@ -64,7 +64,7 @@
 <body>
     <div id="back">
             <img id="background"src="img/background.jpg">
-            <a href="index.jsp"><img id="char" src="img/character.png"></button></a>
+            <a href="./Level_idol.jsp"><img id="char" src="img/character.png"></button></a>
             <span id="span">아이돌</span>
         <div id="back_2">
             <img id="draw_image" src="img/Idol.png">
@@ -125,7 +125,7 @@
             		word = 3;
             	}
     	
-                let audio = new Audio('music/moring.mp3');
+                let audio = new Audio('music/storybgmidol.mp3');
                 audio.addEventListener('ended', function () {
                     this.currentTime = 0;
                     audio.play();
