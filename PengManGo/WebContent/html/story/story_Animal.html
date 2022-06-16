@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PengMan🐧</title>
+    <link rel="stylesheet" type="text/css" href="../../css/story.css?testNm=3"/>
+</head>
+<body>
+	<div id="storyboard">
+		
+	</div>
+	<button id="btnSkip" onclick="onSkip()">
+		Skip
+	</button>
+</body>
+<script type="text/javascript">
+	
+	var num = 1;
+	
+	var board = document.querySelector('#storyboard');
+	
+	showStory();
+	
+	function showStory(){
+		var img = document.createElement('img');
+		
+	    while(board.hasChildNodes()){
+	    	board.removeChild(board.firstChild);
+	    } 
+
+		img.src = '../../story/animal/Animal_Story_'+num+'.jpg';
+		img.style.heigth = '100%';
+		img.style.width = '100%';
+		
+		board.appendChild(img);
+		
+		num++;
+		console.log(num); 
+		
+		if(num == 6){
+			clearInterval(interval);
+			
+			var link_name = '../../Concept_animal.jsp';
+			location.href = link_name;
+			location.replace(link_name);
+	    	window.open(link);
+		}	
+	}
+	
+	var interval = setInterval(showStory, 3000);
+	
+	function onSkip(){
+		clearInterval(interval);
+		
+		var link_name = '../../Concept_animal.jsp';
+		location.href = link_name;
+		location.replace(link_name);
+    	window.open(link);
+	}
+
+		 
+</script>
+</html>
