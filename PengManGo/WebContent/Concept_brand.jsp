@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PengMan🐧</title>
-    <link rel="stylesheet" href="css/Concept_game.css?testNm=8">
+    <link rel="stylesheet" href="css/Concept_game.css?testNm=4"">
     <script src="js/Concept_brand.js?testNm=8" defer></script>
 </head>
 	<%@include file="./dbconn.jsp" %>
@@ -67,7 +67,7 @@
             <a href="./Level_brand.jsp"><img id="char" src="img/brand.png"></button></a>
             <span id="span">브랜드</span>
         <div id="back_2">
-            <img id="draw_image" src="img\brand_background.png">
+            <img id="draw_image" src="img\brand_background.jpg">
             <div id="back_img"></div>
         </div> 
         <div id="word_line"></div>
@@ -125,7 +125,7 @@
             		word = 3;
             	}
     	
-                let audio = new Audio('music/moring.mp3');
+                let audio = new Audio('music/storybgmbrand.mp3');
                 audio.addEventListener('ended', function () {
                     this.currentTime = 0;
                     audio.play();

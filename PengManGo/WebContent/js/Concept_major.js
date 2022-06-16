@@ -14,6 +14,8 @@ let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
 
+let hint_time = 1500;	// 힌트 보여줄 시간
+
 checkLevel();
 
 function checkLevel(){
@@ -85,6 +87,10 @@ function bringImages(){
 
 // 입력받아서 맞으면 알파벳 추가 / 틀리면 그림 추가
 function checkAlpha(clicked_id){
+	// 버튼 효과음 재생
+	let audio = new Audio('music/click.mp3');
+	audio.play();
+	
     let alpha = document.getElementById(clicked_id).value;
     alpha = alpha.toLowerCase(); // 소문자로 변경
 
@@ -135,12 +141,18 @@ function checkAlpha(clicked_id){
         if(Ans_chk == 1){
              // 그림 체크
             if(Lev_Img[word - 1] <= imgAdd){
-                // 게임 종료
-                gameOver();
+				// 버튼 효과음 재생
+				let audio = new Audio('music/gameover.mp3');
+				audio.play();
+				setTimeout(() => {  
+               		// 게임 종료
+                	gameOver();
+				}, 700);
             }else{
                 // 그림 추가
                 imgAdd++;
                 AddImg();
+                AddHint();
             }
         }
     }
@@ -165,6 +177,34 @@ function AddImg(){
 
     ind++;
     pos_ind++;
+}
+
+// 힌트 추가
+function AddHint(){
+
+	var hint_Info = document.querySelector("#word_Info"); 
+		        
+	var img = document.createElement('img');
+		
+	if(word == 1)
+		img.src = 'hint/major/onestep/' + ary[wordCount] + '.jpg';
+	if(word == 2)
+		img.src = 'hint/major/twostep/' + ary[wordCount] + '.jpg';
+	if(word == 3)
+		img.src = 'hint/major/threestep/' + ary[wordCount] + '.jpg';
+
+	img.style.top = '30%';
+	img.style.left = '40%';
+	img.style.heigth = '50%';
+	img.style.width = '50%';
+		
+	hint_Info.appendChild(img);
+	
+	setTimeout(() => {  while(hint_Info.hasChildNodes()){
+        hint_Info.removeChild(hint_Info.firstChild);
+    }}, hint_time);
+	
+	hint_time += 1200;
 }
 
 function gameOver(){

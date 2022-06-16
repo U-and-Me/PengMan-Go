@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#btnSkip{
+	position:absolute;
+	width: 80px;
+	height: 40px;
+	
+	float: right;
+	top : 40px;
+	
+	margin-left: 1800px;
+}

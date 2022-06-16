@@ -7,12 +7,14 @@ let Lev_Img = [3, 5, 6]; // 각 레벨 기회
 let imgAdd = 0; // 이미지 추가 수
 let Ans_Right = 0; // 단어 길이 체크
 let Ans_chk = 1; // 알파벳 맞았는지 체크
-let Img_list = ['bear', 'cat', 'panda','lion', 'rabbit', 'squirrel'];
+let Img_list = ['apple', 'english', 'join','love', 'pengman', 'toeic'];
 let Img_Arr = []; // 이미지 랜덤 인덱스 배열
 let ind = 0; // Img_list 인덱스
 let pos_t = [15, 2, 10, 18, 27, 23]; // 사진 위치
 let pos_r = [13, 7, 22, 26, 1, 17]; // 사진 위치
 let pos_ind = 0; // 위치 배열 인덱스
+
+let hint_time = 2000;
 
 checkLevel();
 
@@ -85,6 +87,10 @@ function bringImages(){
 
 // 입력받아서 맞으면 알파벳 추가 / 틀리면 그림 추가
 function checkAlpha(clicked_id){
+	// 버튼 효과음 재생
+	let audio = new Audio('music/click.mp3');
+	audio.play();
+	
     let alpha = document.getElementById(clicked_id).value;
     alpha = alpha.toLowerCase(); // 소문자로 변경
 
@@ -135,12 +141,18 @@ function checkAlpha(clicked_id){
         if(Ans_chk == 1){
              // 그림 체크
             if(Lev_Img[word - 1] <= imgAdd){
-                // 게임 종료
-                gameOver();
+				// 버튼 효과음 재생
+				let audio = new Audio('music/gameover.mp3');
+				audio.play();
+				setTimeout(() => {  
+               		// 게임 종료
+                	gameOver();
+				}, 700);
             }else{
                 // 그림 추가
                 imgAdd++;
                 AddImg();
+                AddHint();
             }
         }
     }
@@ -152,7 +164,7 @@ function checkAlpha(clicked_id){
 function AddImg(){
 	console.log(Img_Arr[ind]);
     var img = document.createElement('img');
-    img.src = './img/toeic_'+Img_list[Img_Arr[ind]]+'.png';
+    img.src = './img/TOEIC_'+Img_list[Img_Arr[ind]]+'.png';
     img.id = 'animal_img';
     img.style.position = 'absolute';
     img.style.width = '400px';
@@ -165,6 +177,47 @@ function AddImg(){
 
     ind++;
     pos_ind++;
+}
+
+// 힌트 추가
+function AddHint(){
+
+	var hint_Info = document.querySelector("#word_Info"); 
+		     
+	var button = document.createElement('button');
+	
+	// 오디오
+	let music;
+		
+	if(word == 1)
+		 music = new Audio('hint/toeic/onestep/' + ary[wordCount] + '.mp3');
+	if(word == 2)
+		music = new Audio('hint/toeic/twostep/' + ary[wordCount] + '.mp3');
+	if(word == 3)
+		music = new Audio('hint/toeic/threestep/' + ary[wordCount] + '.mp3');
+		
+	console.log(music);
+
+	
+    button.style.color='#004268';
+    button.style.width='50%';
+    button.style.height='50%';
+    button.style.left='20%';
+    button.style.top='100%';
+    button.onclick = 'music.play();'
+		
+	hint_Info.appendChild(button);
+	
+	button.addEventListener('click', () =>{
+		music.play();
+		setTimeout( () => {
+			while(hint_Info.hasChildNodes()){
+        		hint_Info.removeChild(hint_Info.firstChild);
+    		}
+		}, hint_time);
+	});	
+	
+	hint_time += 1700;
 }
 
 function gameOver(){

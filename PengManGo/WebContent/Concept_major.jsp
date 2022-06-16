@@ -64,7 +64,7 @@
 <body>
     <div id="back">
             <img id="background"src="img/background.jpg">
-            <a href="index.jsp"><img id="char" src="img/major.png"></button></a>
+            <a href="./Level_major.jsp"><img id="char" src="img/character.png"></button></a>
             <span id="span">코딩</span>
         <div id="back_2">
             <img id="draw_image" src="img\visualStudioCode.jpg">
@@ -132,7 +132,10 @@
                 }, false);
             </script>
         </div>
-    </div> 
+    </div>  
+    <span id="word_Info">
+    
+    </span>
 </div>
 </body>
 </html>
