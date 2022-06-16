@@ -114,12 +114,14 @@ function checkAlpha(clicked_id){
 
         for(let i = 0; i < word_len; i++){
             if(list_right[i]){
-                line.innerHTML += '<span style=" margin-left:1%; width:68px; font-size:30px;">'+list_right[i]+'</span>';
+                line.innerHTML += '<img id="underline" src="./img/alpha/' + list_right[i].toUpperCase() + '.png" style=" margin-left:1%; margin-top:-100px;"/>';
             }else{
                 line.innerHTML += '<img id="underline" src="./img/underline.png" style=" margin-left:1%; "/>';
             }
         }
     }     
+
+    setTimeout( () => {
 
     // 그림이 완성되기 전에 맞추면 다음 단어
     if(Ans_Right == word_len && imgAdd <= Lev_Img[word - 1]){
@@ -129,7 +131,11 @@ function checkAlpha(clicked_id){
             
             cur_stage = cur_stage + 1;
             
-			gameOver();
+			// 스테이지 페이지로 이동
+			var link = './Level_animal.jsp?stage=' + encodeURI(cur_stage);
+    		location.href = link;
+    		location.replace(link);
+    		window.open(link);
         }else{// 다음 단어
             RemoveNextW();
         }
@@ -154,6 +160,7 @@ function checkAlpha(clicked_id){
     }
 
     Ans_chk = 1;
+    }, 5);
 }
 
 // 이미지 추가

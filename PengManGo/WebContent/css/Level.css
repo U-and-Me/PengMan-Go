@@ -204,7 +204,7 @@ body {
     position:absolute;
     left: 443px;
     top: 1393px;
-    
+    z-index: 2;
 }
  
 
@@ -212,4 +212,5 @@ body {
     position:absolute;
     left: 529px;
     top: 1440px;
+    z-index: 2;
 }

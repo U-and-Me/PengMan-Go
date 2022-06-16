@@ -10,8 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PengMan🐧</title>
-    <link rel="stylesheet" href="css/Concept_game.css?testNm=4">
-    <script src="js/Concept_animal.js?testNm=9" defer></script>
+    <link rel="stylesheet" href="css/Concept_game.css?testNm=6">
+    <script src="js/Concept_animal.js?testNm=10" defer></script>
 </head>
 	<%@include file="./dbconn.jsp" %>
 	<%
@@ -64,7 +64,7 @@
 <body>
     <div id="back">
             <img id="background"src="img/background.jpg">
-            <a href="./Level_animal.jsp"><img id="char" src="img/animal.png"></button></a>
+            <a href="./Level_animal.jsp"><img id="char" src="img/character.png"></button></a>
             <span id="span">동물</span>
         <div id="back_2">
             <img id="draw_image" src="img\yard.jpg">
