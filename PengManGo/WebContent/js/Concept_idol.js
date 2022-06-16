@@ -87,6 +87,10 @@ function bringImages(){
 
 // 입력받아서 맞으면 알파벳 추가 / 틀리면 그림 추가
 function checkAlpha(clicked_id){
+	// 버튼 효과음 재생
+	let audio = new Audio('music/click.mp3');
+	audio.play();
+	
     let alpha = document.getElementById(clicked_id).value;
     alpha = alpha.toLowerCase(); // 소문자로 변경
 
@@ -137,8 +141,13 @@ function checkAlpha(clicked_id){
         if(Ans_chk == 1){
              // 그림 체크
             if(Lev_Img[word - 1] <= imgAdd){
-                // 게임 종료
-                gameOver();
+				// 버튼 효과음 재생
+				let audio = new Audio('music/gameover.mp3');
+				audio.play();
+				setTimeout(() => {  
+               		// 게임 종료
+                	gameOver();
+				}, 700);
             }else{
                 // 그림 추가
                 imgAdd++;
@@ -182,11 +191,11 @@ function AddHint(){
 	let music;
 		
 	if(word == 1)
-		 music = new Audio('/hint/idol/onestep/' + ary[wordCount] + '.mp3');
+		 music = new Audio('hint/idol/onestep/' + ary[wordCount] + '.mp3');
 	if(word == 2)
-		music = new Audio('../hint/idol/twostep/' + ary[wordCount] + '.mp3');
+		music = new Audio('hint/idol/twostep/' + ary[wordCount] + '.mp3');
 	if(word == 3)
-		music = new Audio('../hint/idol/threestep/' + ary[wordCount] + '.mp3');
+		music = new Audio('hint/idol/threestep/' + ary[wordCount] + '.mp3');
 		
 	console.log(music);
 
@@ -202,10 +211,16 @@ function AddHint(){
 	
 	button.addEventListener('click', () => {
 		music.play();
+		setTimeout(() => {  	
+			music.pause();
+			while(hint_Info.hasChildNodes()){
+        		hint_Info.removeChild(hint_Info.firstChild);
+    		}
+    	}, hint_time);
 	});
 
 	
-	hint_time += 2500;
+	hint_time += 1500;
 }
 
 function gameOver(){
