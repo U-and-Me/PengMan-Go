@@ -64,7 +64,7 @@
 <body>
     <div id="back">
             <img id="background"src="img/background.jpg">
-            <a href="index.jsp"><img id="char" src="img/character.png"></button></a>
+            <a href="index.jsp"><img id="char" src="img/major.png"></button></a>
             <span id="span">코딩</span>
         <div id="back_2">
             <img id="draw_image" src="img\visualStudioCode.jpg">

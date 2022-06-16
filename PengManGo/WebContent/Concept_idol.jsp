@@ -64,10 +64,10 @@
 <body>
     <div id="back">
             <img id="background"src="img/background.jpg">
-            <a href="index.jsp"><img id="char" src="img/character.png"></button></a>
+            <a href="index.jsp"><img id="char" src="img/idol.png"></button></a>
             <span id="span">아이돌</span>
         <div id="back_2">
-            <img id="draw_image" src="img/Idol.png">
+            <img id="draw_image" src="img/idol.png">
             <div id="back_img"></div>
         </div> 
         <div id="word_line"></div>

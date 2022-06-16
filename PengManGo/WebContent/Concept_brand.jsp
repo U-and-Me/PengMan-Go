@@ -64,7 +64,7 @@
 <body>
     <div id="back">
             <img id="background"src="img/background.jpg">
-            <a href="./Level_brand.jsp"><img id="char" src="img/character.png"></button></a>
+            <a href="./Level_brand.jsp"><img id="char" src="img/brand.png"></button></a>
             <span id="span">브랜드</span>
         <div id="back_2">
             <img id="draw_image" src="img\brand_background.png">
