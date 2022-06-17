@@ -30,23 +30,33 @@ function clickStory(concept){
 }
 
 function curStage(){
-	var id = 'stage_con' +  db_stage;
 	
-	var stage_con = document.getElementById(id);
-	var top = stage_con.getBoundingClientRect().top;
-	var left = stage_con.getBoundingClientRect().left;
+	for(let i = 1; i < 31; i++){
+		var img = document.createElement('img');
 	
-	console.log(left);
+		img.style.width = '88px';
+		img.style.heigth = '88px';
+		
+		if(i == db_stage){
+			var id = 'stage_con' +  i;
+			var stage_con = document.getElementById(id);
+			
+			img.src = './img/stage_current.png';
+			stage_con.appendChild(img);
+		}else if(i < db_stage){
+			var id = 'stage_con' +  i;
+			var stage_con = document.getElementById(id);
+			
+			img.src = './img/stage_break.png';
+			stage_con.appendChild(img);
+		}else{
+			var id = 'stage_con' +  i;
+			var stage_con = document.getElementById(id);
+		
+			img.src = './img/Stage_icon.png';
+			stage_con.appendChild(img);
+		}
+	}
 	
-	var img = document.createElement('img');
-	img.src = 'img/character.png';
-	img.style.position = 'absolute';
-	img.style.top = top;
-	img.style.left = left;
-	img.style.width = '19%';
-	img.style.height = '19%';
-	
-	var back = document.getElementById('back');
-	
-	back.appendChild(img);
+
 }
