@@ -13,6 +13,12 @@ body {
     margin-top: 24px;
 }
 
+#reset{
+	float:right;
+	margin-right: 20px;
+    margin-top: 24px;
+}
+
 /*배경 이미지*/
 
 #back {

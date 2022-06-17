@@ -196,10 +196,10 @@ function AddHint(){
 	if(word == 3)
 		img.src = 'hint/animal/threestep/' + ary[wordCount] + '.jpg';
 
-	img.style.top = '80%';
-	img.style.left = '20%';
-	img.style.heigth = '80%';
-	img.style.width = '80%';
+	img.style.marginTop = '-50px';
+	img.style.marginLeft = '130px';
+	img.style.heigth = '90%';
+	img.style.width = '90%';
 		
 	hint_Info.appendChild(img);
 	
