@@ -114,12 +114,14 @@ function checkAlpha(clicked_id){
 
         for(let i = 0; i < word_len; i++){
             if(list_right[i]){
-                line.innerHTML += '<span style=" margin-left:1%; width:68px; font-size:30px;">'+list_right[i]+'</span>';
+                line.innerHTML += '<img id="underline" src="./img/alpha/' + list_right[i].toUpperCase() + '.png" style=" margin-left:1%; margin-top:-100px;"/>';
             }else{
                 line.innerHTML += '<img id="underline" src="./img/underline.png" style=" margin-left:1%; "/>';
             }
         }
     }     
+
+    setTimeout( () => {
 
     // 그림이 완성되기 전에 맞추면 다음 단어
     if(Ans_Right == word_len && imgAdd <= Lev_Img[word - 1]){
@@ -152,13 +154,13 @@ function checkAlpha(clicked_id){
                 // 그림 추가
                 imgAdd++;
                 AddImg();
-                // 힌트 추가 
                 AddHint();
             }
         }
     }
 
     Ans_chk = 1;
+    }, 5);
 }
 
 // 이미지 추가
@@ -187,11 +189,11 @@ function AddHint(){
 	var img = document.createElement('img');
 		
 	if(word == 1)
-		img.src = 'hint/brand/onestep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/brand/onestepproduct/' + ary[wordCount] + '.jpg';
 	if(word == 2)
-		img.src = 'hint/brand/twostep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/brand/twostepproduct/' + ary[wordCount] + '.jpg';
 	if(word == 3)
-		img.src = 'hint/brand/threestep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/brand/threestepproduct/' + ary[wordCount] + '.jpg';
 
 	img.style.top = '30%';
 	img.style.left = '40%';
