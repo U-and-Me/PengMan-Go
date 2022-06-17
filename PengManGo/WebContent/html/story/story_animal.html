@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PengMan🐧</title>
-    <link rel="stylesheet" type="text/css" href="../../css/story.css?testNm=3"/>
+    <link rel="stylesheet" type="text/css" href="../../css/story.css?testNm=4"/>
 </head>
 <body>
 	<div id="storyboard">
 		
 	</div>
-	<button id="btnSkip" onclick="onSkip()">
+	<img id="btnSkip" onclick="onSkip()" src="../../img/btn_Skip.png">
 		Skip
-	</button>
+	</img>
 </body>
 <script type="text/javascript">
 	
@@ -34,20 +34,20 @@
 		
 		board.appendChild(img);
 		
-		num++;
+		if(num == 6)
+			num = 6;
+		else num++;
 		console.log(num); 
-		
-		if(num == 6){
-			clearInterval(interval);
-			
-			var link_name = '../../Concept_animal.jsp';
-			location.href = link_name;
-			location.replace(link_name);
-	    	window.open(link);
-		}	
 	}
 	
 	var interval = setInterval(showStory, 3000);
+	setTimeout(function() {       
+		clearTimeout(interval);  			
+		var link_name = '../../Concept_animal.jsp';
+		location.href = link_name;
+		location.replace(link_name);
+		window.open(link);  
+	},18000);
 	
 	function onSkip(){
 		clearInterval(interval);

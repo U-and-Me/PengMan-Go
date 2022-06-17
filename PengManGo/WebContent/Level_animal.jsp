@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>PengMan🐧</title>
-<link rel="stylesheet" href="css/Level.css?testNm=6">
-<script src="js/Level.js?testNm=15" defer></script>
+<link rel="stylesheet" href="css/Level.css?testNm=7">
+<script src="js/Level.js?testNm=16" defer></script>
 </head>
 <%@include file="./dbconn.jsp" %>
 	<%
@@ -40,12 +40,10 @@
      	if(pstmt != null){
      		pstmt.close();
      	}
-     	if(conn != null){
-     		conn.close();
-     	}
 	%>
 <body>
-	<a href="./html/concept.html"><img id="link" src="./img/btn_back.png"></a>
+	<a href="./html/Concept.html"><img id="link" src="./img/btn_back.png"></a>
+	<img id="reset" src="./img/btn_reset.png" onclick="Reset('animal')">
 	
 	<div id="back">
 		<img id="background" src=".\img\Stage_Background.png" >
@@ -111,8 +109,31 @@
 		<div id="stage_con1" onclick="clickId(1, 'animal')">
 		</div>
 	</div>
-    <script >
+	
+    <script>
     	let db_stage = <%= stage%>;
+    	
+    	function dbReset(update_db){
+    		if(update_db == 1){
+    			<%
+    				pstmt = null;
+    				sql = "";
+    			
+    				sql = "update stage set position=? where concept='idol'";
+    				pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, "1");
+					pstmt.executeUpdate();
+    				System.out.println(stage);
+
+         			if(pstmt != null){
+         				pstmt.close();
+         			}
+         			if(conn != null){
+         				conn.close();
+         			}
+    			%>
+    		}
+    	}
     </script>
 </body>
 </html>

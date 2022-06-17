@@ -6,7 +6,9 @@ function clickId(stage, concept){
 
 	console.log(stage);
 	
-	if(stage <= db_stage){
+	if(stage == 1){
+		clickStory(concept);
+	}else if(stage <= db_stage){
 	
 		let cur_stage = stage;
 		localStorage.setItem("stage", cur_stage);
@@ -57,6 +59,18 @@ function curStage(){
 			stage_con.appendChild(img);
 		}
 	}
-	
+}
+
+function Reset(concept){
+    	let update_db = 0;
+		if(confirm('정말로 초기화 하시겠습니까?') == true){
+			update_db = 1;
+			dbReset(update_db);
+			var link_name = './Level_' + concept + '.jsp';
+			location.href = link_name;
+			location.replace(link_name);
+    		window.open(link);
+		}
+
 
 }

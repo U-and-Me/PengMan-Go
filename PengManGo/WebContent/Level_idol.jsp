@@ -40,11 +40,11 @@
      	if(pstmt != null){
      		pstmt.close();
      	}
-     	if(conn != null){
-     		conn.close();
-     	}
 	%>
-<body>
+<body>	
+	<a href="./html/Concept.html"><img id="link" src="./img/btn_back.png"></a>
+	<img id="reset" src="./img/btn_reset.png" onclick="Reset('idol')">
+
 	<div id="back">
 		<img id="background" src=".\img\Stage_Background.png" >
 
@@ -110,10 +110,30 @@
 		</div>
 	</div>
 
-
-
 	<script>
     	let db_stage = <%= stage%>;
+    	
+    	function dbReset(update_db){
+    		if(update_db == 1){
+    			<%
+    				pstmt = null;
+    				sql = "";
+    			
+    				sql = "update stage set position=? where concept='idol'";
+    				pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, "1");
+					pstmt.executeUpdate();
+    				System.out.println(stage);
+
+         			if(pstmt != null){
+         				pstmt.close();
+         			}
+         			if(conn != null){
+         				conn.close();
+         			}
+    			%>
+    		}
+    	}
     </script>
 </body>
 </html>

@@ -190,16 +190,16 @@ function AddHint(){
 	var img = document.createElement('img');
 		
 	if(word == 1)
-		img.src = 'hint/character/onestep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/character/onesteplogo/' + ary[wordCount] + '.jpg';
 	if(word == 2)
-		img.src = 'hint/character/twostep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/character/twosteplogo/' + ary[wordCount] + '.jpg';
 	if(word == 3)
-		img.src = 'hint/character/threestep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/character/threesteplogo/' + ary[wordCount] + '.jpg';
 
-	img.style.top = '30%';
-	img.style.left = '40%';
-	img.style.heigth = '50%';
-	img.style.width = '50%';
+	img.style.marginTop = '-50px';
+	img.style.marginLeft = '130px';
+	img.style.heigth = '90%';
+	img.style.width = '90%';
 		
 	hint_Info.appendChild(img);
 	
