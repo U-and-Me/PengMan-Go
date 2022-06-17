@@ -6,6 +6,13 @@ body {
     overflow-x: hidden;
     background-color:#3884a8;
 }
+
+#link{
+	position: fixed;
+    margin-left: 20px;
+    margin-top: 24px;
+}
+
 /*배경 이미지*/
 
 #back {
@@ -16,13 +23,6 @@ body {
 
 
 /*스테이지 30*/
-
-#back .stageimg {
-    width: 88px;
-    height: 88px;
-}
-
-
 
 #stage_con30{
     position:absolute;
