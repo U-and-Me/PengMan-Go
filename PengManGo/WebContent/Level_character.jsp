@@ -20,13 +20,13 @@
 		String sql = "";
 		
 		if(str != null &&Integer.parseInt(str) > 1){
-			sql = "update stage set position=? where concept='major'";
+			sql = "update stage set position=? where concept='character'";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, str);
 			pstmt.executeUpdate();
 		}
 		
-		sql = "select position from stage where concept='major'";
+		sql = "select position from stage where concept='character'";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()){

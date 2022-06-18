@@ -4,7 +4,7 @@
 	Connection conn = null;
 
 	try{
-		String url = "jdbc:mysql://localhost:3306/pengmango_db?serverTimezone=Asia/Seoul&useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/pengmango_db?serverTimezone=UTC&useSSL=false";
 		String user = "root";
 		String password = "mirim";
 		
