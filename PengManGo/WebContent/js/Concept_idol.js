@@ -168,7 +168,7 @@ function AddImg(){
 	console.log(Img_Arr[ind]);
     var img = document.createElement('img');
     img.src = './img/idol_'+Img_list[Img_Arr[ind]]+'.png';
-    img.id = 'animal_img';
+    img.id = 'idol_img';
     img.style.position = 'absolute';
     img.style.width = '400px';
     img.style.height = '400px';
@@ -187,7 +187,7 @@ function AddHint(){
 
 	var hint_Info = document.querySelector("#word_Info"); 
 		     
-	var button = document.createElement('button');
+	var button = document.createElement('img');
 	
 	// 오디오
 	let music;
@@ -198,15 +198,12 @@ function AddHint(){
 		music = new Audio('hint/idol/twostep/' + ary[wordCount] + '.mp3');
 	if(word == 3)
 		music = new Audio('hint/idol/threestep/' + ary[wordCount] + '.mp3');
-		
-	console.log(music);
 
-	
-    button.style.color='#004268';
-    button.style.width='50%';
-    button.style.height='50%';
-    button.style.left='20%';
-    button.style.top='100%';
+	button.src = 'img/btn_music.png';	
+    button.style.width='70%';
+    button.style.height='70%';
+    button.style.left='60%';
+    button.style.top='70%';
     button.onclick = 'music.play();'
 		
 	hint_Info.appendChild(button);

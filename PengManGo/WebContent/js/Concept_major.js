@@ -190,16 +190,16 @@ function AddHint(){
 	var img = document.createElement('img');
 		
 	if(word == 1)
-		img.src = 'hint/major/onestep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/codding/onestepquestion/' + ary[wordCount] + '.jpg';
 	if(word == 2)
-		img.src = 'hint/major/twostep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/codding/twostepquestion/' + ary[wordCount] + '.jpg';
 	if(word == 3)
-		img.src = 'hint/major/threestep/' + ary[wordCount] + '.jpg';
+		img.src = 'hint/codding/threestepquestion/' + ary[wordCount] + '.jpg';
 
-	img.style.top = '30%';
-	img.style.left = '40%';
-	img.style.heigth = '50%';
-	img.style.width = '50%';
+	img.style.top = '20%';
+	img.style.left = '55%';
+	img.style.heigth = '80%';
+	img.style.width = '80%';
 		
 	hint_Info.appendChild(img);
 	
