@@ -125,9 +125,10 @@
             		word = 3;
             	}
     	
-                let audio = new Audio('music/moring.mp3');
+                let audio = new Audio('music/storybgmcoding.mp3');
                 audio.addEventListener('ended', function () {
                     this.currentTime = 0;
+                    audio.volumn = 3;
                     audio.play();
                 }, false);
             </script>

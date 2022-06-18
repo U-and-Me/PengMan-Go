@@ -128,6 +128,7 @@
                 let audio = new Audio('music/storybgmanimal.mp3');
                 audio.addEventListener('ended', function () {
                     this.currentTime = 0;
+                    audio.volumn = 3;
                     audio.play();
                 }, false);
             </script>
