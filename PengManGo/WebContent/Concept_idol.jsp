@@ -67,7 +67,7 @@
             <a href="./Level_idol.jsp"><img id="char" src="img/character.png"></button></a>
             <span id="span">아이돌</span>
         <div id="back_2">
-            <img id="draw_image" src="img/idol.png">
+            <img id="draw_image" src="./img/idol.png">
             <div id="back_img"></div>
         </div> 
         <div id="word_line"></div>
@@ -128,6 +128,7 @@
                 let audio = new Audio('music/storybgmidol.mp3');
                 audio.addEventListener('ended', function () {
                     this.currentTime = 0;
+                    audio.volumn = 3;
                     audio.play();
                 }, false);
             </script>
