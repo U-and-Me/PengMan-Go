@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
 <title>PengMan🐧</title>
 <link rel="stylesheet" href="css/Level.css?testNm=7">
-<script src="js/Level.js?testNm=16" defer></script>
+<script src="js/Level.js?testNm=17" defer></script>
 </head>
 <%@include file="./dbconn.jsp" %>
 	<%
 		String str = request.getParameter("stage");
-		
+	
 		int stage = 0;
 	
 		PreparedStatement pstmt = null;
@@ -31,8 +31,6 @@
 		while(rs.next()){
 			stage = Integer.parseInt(rs.getString("position"));
 		}
-		
-		System.out.println(stage);
 
 		if(rs != null){
      		rs.close();
@@ -40,6 +38,8 @@
      	if(pstmt != null){
      		pstmt.close();
      	}
+     	
+     	
 	%>
 <body>
 	<a href="./html/Concept.html"><img id="link" src="./img/btn_back.png"></a>
@@ -115,23 +115,23 @@
     	
     	function dbReset(update_db){
     		if(update_db == 1){
-    			<%
-    				pstmt = null;
-    				sql = "";
-    			
-    				sql = "update stage set position=? where concept='idol'";
-    				pstmt = conn.prepareStatement(sql);
-					pstmt.setString(1, "1");
-					pstmt.executeUpdate();
-    				System.out.println(stage);
+    		<%
+				pstmt = null;
+				sql = "";
+			
+				sql = "update stage set position=? where concept='animal'";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, "1");
+				pstmt.executeUpdate();
+				System.out.println("res : " + stage);
 
-         			if(pstmt != null){
-         				pstmt.close();
-         			}
-         			if(conn != null){
-         				conn.close();
-         			}
-    			%>
+     			if(pstmt != null){
+     				pstmt.close();
+     			}
+     			if(conn != null){
+     				conn.close();
+     			}
+			%>
     		}
     	}
     </script>

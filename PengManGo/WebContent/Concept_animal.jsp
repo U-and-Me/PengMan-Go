@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PengMan🐧</title>
     <link rel="stylesheet" href="css/Concept_game.css?testNm=6">
-    <script src="js/Concept_animal.js?testNm=11" defer></script>
+    <script src="js/Concept_animal.js?testNm=13" defer></script>
 </head>
 	<%@include file="./dbconn.jsp" %>
 	<%
@@ -29,7 +29,6 @@
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 			word_list1.add(rs.getString("c_word"));
-			System.out.println(word_list1.get(0));
 		}
 		
 		sql = "select c_word from word where diff='2' and concept='animal' order by rand() limit 2";
@@ -38,18 +37,13 @@
 		while(rs.next()){
 			word_list2.add(rs.getString("c_word"));
 		}
-		System.out.println(word_list2.get(0));
-		System.out.println(word_list2.get(1));
+		
 		sql = "select c_word from word where diff='3' and concept='animal' order by rand() limit 3";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 			word_list3.add(rs.getString("c_word"));
 		}
-
-		System.out.println(word_list3.get(0));
-		System.out.println(word_list3.get(1));
-		System.out.println(word_list3.get(2));
 		
 		if(rs != null){
      		rs.close();
@@ -107,8 +101,7 @@
             <script>                	
             	let ary = [];
             	
-    			let cur_stage = parseInt(window.localStorage.getItem("stage"));
-    			//console.log(cur_stage);
+    			let cur_stage = parseInt(window.localStorage.getItem("animal_stage"));
     			let word = 0;
     			
             	if(cur_stage >= 1 && cur_stage <= 10){
