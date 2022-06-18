@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PengMan🐧</title>
+    <link rel="stylesheet" type="text/css" href="../../css/story.css?testNm=4"/>
+</head>
+<body>
+	<div id="storyboard">
+		
+	</div>
+	<img id="btnSkip" onclick="onSkip()" src="../../img/btn_Skip.png">
+		Skip
+	</img>
+</body>
+<script type="text/javascript">
+	
+	var num = 1;
+	
+	var board = document.querySelector('#storyboard');
+	
+	showStory();
+	
+	function showStory(){
+		var img = document.createElement('img');
+		
+	    while(board.hasChildNodes()){
+	    	board.removeChild(board.firstChild);
+	    } 
+
+		img.src = '../../story/brand/Brand_Story_' + num + '.jpg';
+		img.style.heigth = '100%';
+		img.style.width = '100%';
+		
+		board.appendChild(img);
+		
+		if(num == 6)
+			num = 6;
+		else num++;
+	}
+	
+	var interval = setInterval(showStory, 3000);
+	setTimeout(function() {       
+		clearTimeout(interval);  			
+		var link_name = '../../Concept_brand.jsp';
+		location.href = link_name;
+		location.replace(link_name);
+		window.open(link);  
+	},18000);
+	
+	function onSkip(){
+		clearInterval(interval);
+		
+		var link_name = '../../Concept_brand.jsp';
+		location.href = link_name;
+		location.replace(link_name);
+    	window.open(link);
+	}
+
+		 
+</script>
+</html>

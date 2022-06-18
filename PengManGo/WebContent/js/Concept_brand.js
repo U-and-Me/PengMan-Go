@@ -81,7 +81,6 @@ function bringImages(){
                 break;
             } 
         }
-        console.log("ff  " + Img_Arr[i]);
     }
 }
 
