@@ -3,16 +3,14 @@
 curStage();
 
 function clickId(stage, concept){
-
-	console.log(stage);
+	
+	let cur_stage = stage;
+	localStorage.setItem(concept+"_stage", cur_stage);
 	
 	if(stage == 1){
 		clickStory(concept);
 	}else if(stage <= db_stage){
 	
-		let cur_stage = stage;
-		localStorage.setItem("stage", cur_stage);
-		
 		var link_name = './Concept_' + concept + '.jsp';
 		location.href = link_name;
 		location.replace(link_name);

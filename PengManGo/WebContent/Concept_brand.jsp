@@ -107,7 +107,7 @@
             <script>                	
             	let ary = [];
             	
-    			let cur_stage = parseInt(window.localStorage.getItem("stage"));
+    			let cur_stage = parseInt(window.localStorage.getItem("brand_stage"));
     			//console.log(cur_stage);
     			let word = 0;
     			
