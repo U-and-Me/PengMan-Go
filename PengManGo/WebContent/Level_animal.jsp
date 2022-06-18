@@ -11,7 +11,8 @@
 <%@include file="./dbconn.jsp" %>
 	<%
 		String str = request.getParameter("stage");
-	
+		String reset = request.getParameter("reset");
+		
 		int stage = 0;
 	
 		PreparedStatement pstmt = null;
@@ -39,7 +40,22 @@
      		pstmt.close();
      	}
      	
-     	
+     	if(reset != null && reset.equals("1")){
+			pstmt = null;
+			sql = "";
+	
+			sql = "update stage set position=? where concept='animal'";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "1");
+			pstmt.executeUpdate();
+
+			if(pstmt != null){
+				pstmt.close();
+			}
+			if(conn != null){
+				conn.close();
+			}
+     	}
 	%>
 <body>
 	<a href="./html/Concept.html"><img id="link" src="./img/btn_back.png"></a>
@@ -112,28 +128,6 @@
 	
     <script>
     	let db_stage = <%= stage%>;
-    	
-    	function dbReset(update_db){
-    		if(update_db == 1){
-    		<%
-				pstmt = null;
-				sql = "";
-			
-				sql = "update stage set position=? where concept='animal'";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, "1");
-				pstmt.executeUpdate();
-				System.out.println("res : " + stage);
-
-     			if(pstmt != null){
-     				pstmt.close();
-     			}
-     			if(conn != null){
-     				conn.close();
-     			}
-			%>
-    		}
-    	}
     </script>
 </body>
 </html>
