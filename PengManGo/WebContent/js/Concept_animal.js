@@ -81,7 +81,6 @@ function bringImages(){
                 break;
             } 
         }
-        console.log("ff  " + Img_Arr[i]);
     }
 }
 
@@ -130,12 +129,22 @@ function checkAlpha(clicked_id){
             alert("다음 단계로 올라갑니다👩🏻‍🎨");
             
             cur_stage = cur_stage + 1;
+            console.log(cur_stage);
             
+            // 모든 스테이지를 꺴을 경우
+            if(cur_stage == 31){
+            	localStorage.setItem("animal_stage", cur_stage);
+            	var link = './html/story/story_animal.html';
+    			location.href = link;
+    			location.replace(link);
+    			window.open(link);
+            }else{           
 			// 스테이지 페이지로 이동
 			var link = './Level_animal.jsp?stage=' + encodeURI(cur_stage);
     		location.href = link;
     		location.replace(link);
     		window.open(link);
+    		}
         }else{// 다음 단어
             RemoveNextW();
         }
