@@ -28,7 +28,8 @@
 	    	board.removeChild(board.firstChild);
 	    } 
 
-		img.src = '../../story/brand/Brand_Story_' + num + '.jpg';
+	    img.type = 'image/jpeg';
+		img.src = '../../story/brand/Brand_Story_'+num+'.png';
 		img.style.heigth = '100%';
 		img.style.width = '100%';
 		
@@ -37,6 +38,7 @@
 		if(num == 6)
 			num = 6;
 		else num++;
+		console.log(num); 
 	}
 	
 	var interval = setInterval(showStory, 3000);

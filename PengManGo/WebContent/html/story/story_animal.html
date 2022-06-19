@@ -15,11 +15,18 @@
 </body>
 <script type="text/javascript">
 	
+	var ending = localStorage.getItem("animal_stage");
+	
 	var num = 1;
 	
 	var board = document.querySelector('#storyboard');
 	
-	showStory();
+	var ending = localStorage.getItem("animal_stage");
+	if(ending == 31){
+		endingStory();
+	}else{
+		showStory();
+	}
 	
 	function showStory(){
 		var img = document.createElement('img');
@@ -40,22 +47,64 @@
 		console.log(num); 
 	}
 	
-	var interval = setInterval(showStory, 3000);
-	setTimeout(function() {       
-		clearTimeout(interval);  			
-		var link_name = '../../Concept_animal.jsp';
-		location.href = link_name;
-		location.replace(link_name);
-		window.open(link);  
-	},18000);
+	function endingStory(){
+		num = 7;
+		var img = document.createElement('img');
+		
+	    while(board.hasChildNodes()){
+	    	board.removeChild(board.firstChild);
+	    } 
+
+		img.src = '../../story/animal/Animal_Story_'+num+'.jpg';
+		img.style.heigth = '100%';
+		img.style.width = '100%';
+		
+		board.appendChild(img);
+		
+		if(num == 8)
+			num = 8;
+		else num++;
+		console.log(num); 
+	}
+	
+	var interval;
+	
+	if(ending == 31){
+		interval = setInterval(endingStory, 3000);
+		setTimeout(function() {       
+			clearTimeout(interval);  			
+			var link_name = '../../Level_animal.jsp?stage=31'
+			location.href = link_name;
+			location.replace(link_name);
+			window.open(link);  
+		},6000);
+	}else{
+		interval = setInterval(showStory, 3000);
+		setTimeout(function() {       
+			clearTimeout(interval);  			
+			var link_name = '../../Concept_animal.jsp';
+			location.href = link_name;
+			location.replace(link_name);
+			window.open(link);  
+		},18000);
+	}
+
 	
 	function onSkip(){
 		clearInterval(interval);
 		
-		var link_name = '../../Concept_animal.jsp';
-		location.href = link_name;
-		location.replace(link_name);
-    	window.open(link);
+		if(ending == 31){
+			var link_name = '../../Level_animal.jsp';
+			location.href = link_name;
+			location.replace(link_name);
+	    	window.open(link);
+		}else{
+			var link_name = '../../Concept_animal.jsp';
+			location.href = link_name;
+			location.replace(link_name);
+	    	window.open(link);
+		}
+
 	}
 
 		 
