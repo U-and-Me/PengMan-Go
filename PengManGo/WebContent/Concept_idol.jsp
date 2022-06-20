@@ -29,7 +29,6 @@
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 			word_list1.add(rs.getString("c_word"));
-			System.out.println(word_list1.get(0));
 		}
 		
 		sql = "select c_word from word where diff='2' and concept='idol' order by rand() limit 2";
@@ -38,18 +37,13 @@
 		while(rs.next()){
 			word_list2.add(rs.getString("c_word"));
 		}
-		System.out.println(word_list2.get(0));
-		System.out.println(word_list2.get(1));
+
 		sql = "select c_word from word where diff='3' and concept='idol' order by rand() limit 3";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 			word_list3.add(rs.getString("c_word"));
 		}
-
-		System.out.println(word_list3.get(0));
-		System.out.println(word_list3.get(1));
-		System.out.println(word_list3.get(2));
 		
 		if(rs != null){
      		rs.close();
@@ -108,7 +102,6 @@
             	let ary = [];
             	
             	let cur_stage = parseInt(window.localStorage.getItem("idol_stage"));
-    			//console.log(cur_stage);
     			let word = 0;
     			
             	if(cur_stage >= 1 && cur_stage <= 10){

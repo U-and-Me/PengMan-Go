@@ -101,7 +101,6 @@
             	let ary = [];
             	
     			let cur_stage = parseInt(window.localStorage.getItem("brand_stage"));
-    			//console.log(cur_stage);
     			let word = 0;
     			
             	if(cur_stage >= 1 && cur_stage <= 10){
