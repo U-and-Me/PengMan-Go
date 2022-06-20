@@ -86,6 +86,10 @@ function bringImages(){
 
 // 입력받아서 맞으면 알파벳 추가 / 틀리면 그림 추가
 function checkAlpha(clicked_id){
+	var hint_Info = document.querySelector("#word_Info"); 
+	while(hint_Info.hasChildNodes()){
+        hint_Info.removeChild(hint_Info.firstChild);
+    }
 	// 버튼 효과음 재생
 	let audio = new Audio('music/click.mp3');
 	audio.play();

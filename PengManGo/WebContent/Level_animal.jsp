@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>PengMan🐧</title>
 <link rel="stylesheet" href="css/Level.css?testNm=7">
-<script src="js/Level.js?testNm=17" defer></script>
+<script src="js/Level.js?testNm=20" defer></script>
 </head>
 <%@include file="./dbconn.jsp" %>
 	<%

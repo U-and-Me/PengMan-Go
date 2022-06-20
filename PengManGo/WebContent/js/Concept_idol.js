@@ -81,12 +81,15 @@ function bringImages(){
                 break;
             } 
         }
-        console.log("ff  " + Img_Arr[i]);
     }
 }
 
 // 입력받아서 맞으면 알파벳 추가 / 틀리면 그림 추가
 function checkAlpha(clicked_id){
+	var hint_Info = document.querySelector("#word_Info"); 
+	while(hint_Info.hasChildNodes()){
+        hint_Info.removeChild(hint_Info.firstChild);
+    }
 	// 버튼 효과음 재생
 	let audio = new Audio('music/click.mp3');
 	audio.play();
@@ -198,6 +201,7 @@ function AddHint(){
 	var hint_Info = document.querySelector("#word_Info"); 
 		     
 	var button = document.createElement('img');
+	var img = document.createElement('img');
 	
 	// 오디오
 	let music;
@@ -208,15 +212,32 @@ function AddHint(){
 		music = new Audio('hint/idol/twostep/' + ary[wordCount] + '.mp3');
 	if(word == 3)
 		music = new Audio('hint/idol/threestep/' + ary[wordCount] + '.mp3');
+		
+	if(imgAdd >= 2){
+		if(word == 1)
+			img.src = 'hint/idol/onestepgroup/' + ary[wordCount] + '.jpg';
+		if(word == 2)
+			img.src = 'hint/idol/twostepgroup/' + ary[wordCount] + '.jpg';
+		if(word == 3)
+			img.src = 'hint/idol/threestepgroup/' + ary[wordCount] + '.jpg';	
+	}
+	
+	img.style.position = 'absolute';
+	img.style.width='80%';
+    img.style.height='80%';
+    img.style.left='70%';
 
 	button.src = 'img/btn_music.png';	
     button.style.width='70%';
     button.style.height='70%';
-    button.style.left='60%';
+    button.style.left='30%';
     button.style.top='70%';
     button.onclick = 'music.play();'
 		
 	hint_Info.appendChild(button);
+	
+	if(imgAdd >=2)
+		hint_Info.appendChild(img);
 	
 	button.addEventListener('click', () => {
 		music.play();
