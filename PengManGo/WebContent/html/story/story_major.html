@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PengMan🐧</title>
+    <link rel="stylesheet" type="text/css" href="../../css/story.css?testNm=4"/>
+</head>
+<body>
+	<div id="storyboard">
+		
+	</div>
+	<img id="btnSkip" onclick="onSkip()" src="../../img/btn_Skip.png">
+		Skip
+	</img>
+</body>
+<script type="text/javascript">
+	var num = 1;
+	
+	var board = document.querySelector('#storyboard');
+	
+	var ending = localStorage.getItem("major_stage");
+	if(ending == 31){
+		num = 7;
+		endingStory();
+	}else{
+		showStory();
+	}
+	
+	function showStory(){
+		var img = document.createElement('img');
+		
+	    while(board.hasChildNodes()){
+	    	board.removeChild(board.firstChild);
+	    } 
+
+		img.src = '../../story/major/Major_Story_'+num+'.png';
+		img.style.heigth = '100%';
+		img.style.width = '100%';
+		
+		board.appendChild(img);
+		
+		if(num == 6)
+			num = 6;
+		else num++;
+		console.log(num); 
+	}
+	
+	function endingStory(){
+		var img = document.createElement('img');
+		
+	    while(board.hasChildNodes()){
+	    	board.removeChild(board.firstChild);
+	    } 
+
+		img.src = '../../story/major/Major_Story_'+num+'.png';
+		img.style.heigth = '100%';
+		img.style.width = '100%';
+		
+		board.appendChild(img);
+		
+		if(num == 8)
+			num = 8;
+		else num++;
+		console.log(num); 
+	}
+	
+	var interval;
+	
+	if(ending == 31){
+		interval = setInterval(endingStory, 3000);
+		setTimeout(function() {       
+			clearTimeout(interval);  			
+			var link_name = '../../Level_major.jsp?stage=31';
+			location.href = link_name;
+			location.replace(link_name);
+			window.open(link);  
+		},6000);
+	}else{
+		interval = setInterval(showStory, 3000);
+		setTimeout(function() {       
+			clearTimeout(interval);  			
+			var link_name = '../../Concept_major.jsp';
+			location.href = link_name;
+			location.replace(link_name);
+			window.open(link);  
+		},18000);
+	}
+
+	
+	function onSkip(){
+		clearInterval(interval);
+		
+		if(ending == 31){
+			var link_name = '../../Level_major.jsp?stage=31';
+			location.href = link_name;
+			location.replace(link_name);
+	    	window.open(link);
+		}else{
+			var link_name = '../../Concept_major.jsp';
+			location.href = link_name;
+			location.replace(link_name);
+	    	window.open(link);
+		}
+
+	}
+
+		 
+</script>
+</html>
