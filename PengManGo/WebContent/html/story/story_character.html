@@ -18,7 +18,7 @@
 	
 	var board = document.querySelector('#storyboard');
 	
-	var ending = localStorage.getItem("brand_stage");
+	var ending = localStorage.getItem("character_stage");
 	if(ending == 31){
 		num = 7;
 		endingStory();
@@ -33,7 +33,7 @@
 	    	board.removeChild(board.firstChild);
 	    } 
 
-		img.src = '../../story/brand/Brand_Story_'+num+'.png';
+		img.src = '../../story/character/Character_Story_'+num+'.png';
 		img.style.heigth = '100%';
 		img.style.width = '100%';
 		
@@ -52,7 +52,7 @@
 	    	board.removeChild(board.firstChild);
 	    } 
 
-		img.src = '../../story/brand/Brand_Story_'+num+'.png';
+		img.src = '../../story/character/Character_Story_'+num+'.png';
 		img.style.heigth = '100%';
 		img.style.width = '100%';
 		
@@ -70,7 +70,7 @@
 		interval = setInterval(endingStory, 3000);
 		setTimeout(function() {       
 			clearTimeout(interval);  			
-			var link_name = '../../Level_brand.jsp?stage=31';
+			var link_name = '../../Level_character.jsp?stage=31';
 			location.href = link_name;
 			location.replace(link_name);
 			window.open(link);  
@@ -79,7 +79,7 @@
 		interval = setInterval(showStory, 3000);
 		setTimeout(function() {       
 			clearTimeout(interval);  			
-			var link_name = '../../Concept_brand.jsp';
+			var link_name = '../../Concept_character.jsp';
 			location.href = link_name;
 			location.replace(link_name);
 			window.open(link);  
@@ -91,12 +91,12 @@
 		clearInterval(interval);
 		
 		if(ending == 31){
-			var link_name = '../../Level_brand.jsp?stage=31';
+			var link_name = '../../Level_character.jsp?stage=31';
 			location.href = link_name;
 			location.replace(link_name);
 	    	window.open(link);
 		}else{
-			var link_name = '../../Concept_brand.jsp';
+			var link_name = '../../Concept_character.jsp';
 			location.href = link_name;
 			location.replace(link_name);
 	    	window.open(link);
