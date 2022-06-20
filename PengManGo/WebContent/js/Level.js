@@ -62,7 +62,6 @@ function curStage(){
 function Reset(concept){
     	let update_db = 0;
 		if(confirm('정말로 초기화 하시겠습니까?') == true){
-			update_db = 1;
 			var link_name = './Level_' + concept + '.jsp?reset=1';
 			location.href = link_name;
 			location.replace(link_name);

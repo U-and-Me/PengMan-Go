@@ -103,9 +103,11 @@ function checkAlpha(clicked_id){
 
     for(let i = 0; i < word_len; i++){
         if(alpha == Arr_word[i]){ // 맞을 경우 밑줄 제거 후 알파벳 출력
-            Ans_Right++;
-            list_right[i] = Arr_word[i];
-            Ans_chk = 0;
+        	if(list_right[i] == undefined || list_right[i] == ''){
+            	Ans_Right++;
+            	list_right[i] = Arr_word[i];
+            }
+           Ans_chk = 0;
         }
     }
     
@@ -133,7 +135,6 @@ function checkAlpha(clicked_id){
             alert("다음 단계로 올라갑니다👩🏻‍🎨");
             
             cur_stage = cur_stage + 1;
-            console.log(cur_stage);
             
             // 모든 스테이지를 꺴을 경우
             if(cur_stage == 31){
