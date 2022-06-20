@@ -13,16 +13,14 @@
 		Skip
 	</img>
 </body>
-<script type="text/javascript">
-	
-	var ending = localStorage.getItem("animal_stage");
-	
+<script type="text/javascript">	
 	var num = 1;
 	
 	var board = document.querySelector('#storyboard');
 	
 	var ending = localStorage.getItem("animal_stage");
 	if(ending == 31){
+		num = 7;
 		endingStory();
 	}else{
 		showStory();
@@ -48,7 +46,6 @@
 	}
 	
 	function endingStory(){
-		num = 7;
 		var img = document.createElement('img');
 		
 	    while(board.hasChildNodes()){
@@ -94,7 +91,7 @@
 		clearInterval(interval);
 		
 		if(ending == 31){
-			var link_name = '../../Level_animal.jsp';
+			var link_name = '../../Level_animal.jsp?stage=31'
 			location.href = link_name;
 			location.replace(link_name);
 	    	window.open(link);
