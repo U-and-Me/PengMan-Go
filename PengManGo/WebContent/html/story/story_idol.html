@@ -20,6 +20,7 @@
 	
 	var ending = localStorage.getItem("idol_stage");
 	if(ending == 31){
+		num = 7;
 		endingStory();
 	}else{
 		showStory();
@@ -45,7 +46,6 @@
 	}
 	
 	function endingStory(){
-		num = 7;
 		var img = document.createElement('img');
 		
 	    while(board.hasChildNodes()){
